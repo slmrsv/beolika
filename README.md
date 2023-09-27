@@ -12,7 +12,7 @@ I'm a multidisciplinary developer with a passion for architectural visualization
 
 ## Skills
 
-<div style="display: flex; gap: 10px;">
+<div style="display: flex; margin-right: 10px;">
   <a href="https://www.w3.org/html/">
     <img src="https://imgs.search.brave.com/KhuJ2dCkk8FOHaKID8zYFqiXTuMKMNz9M8_K_PUaBCc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJlZXBuZ2xvZ29z/LmNvbS91cGxvYWRz/L2h0bWw1LWxvZ28t/cG5nL2h0bWw1LWxv/Z28taHRtbC1sb2dv/LTAucG5n" width="35px" height="35px" alt="Html Logo" />
   </a>
