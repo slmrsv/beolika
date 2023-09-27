@@ -1,11 +1,11 @@
-# Hi there 👋, My name is Sélim Baouz
+# Hi there 👋
 
-## JAMstack Developer & Web/3D Designer
+## My name is Sélim Baouz
 
-A Creative developer with a passion for architectural visualization and immersive experiences.
+I'm a muldisciplinary developer with a passion for architectural visualization and immersive experiences.
 
 - 🌱 Based in Asia, I'm a freelance working remotely.
-- ⚡ I'm perfecting my 3D skills with Blender & React Three Js.
+- ⚡ I'm perfecting my 3D skills with Blender & R3F.
 - 🤝 I'm open to collaborating.
 - 💬 Enquiries -> hello@selimmersive.com
 
