@@ -2,7 +2,7 @@
 
 ## JAMstack Developer & Web/3D Designer
 
-### A Creative developer with a passion for architectural visualization and immersive experiences.
+A Creative developer with a passion for architectural visualization and immersive experiences.
 
 - 🌱 Based in Asia, I'm a freelance working remotely.
 - ⚡ I'm perfecting my 3D skills with Blender & React Three Js.
