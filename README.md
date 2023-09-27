@@ -1,6 +1,6 @@
 # Hi there 👋, My name is Sélim Baouz
 
-## JAMstack Developer | Web Designer | 3D Artist (Junior)
+## JAMstack Developer & Web/3D Designer
 
 ### A Creative developer with a passion for architectural visualization and immersive experiences.
 
