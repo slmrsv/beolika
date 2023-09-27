@@ -14,7 +14,7 @@ I'm a multidisciplinary developer with a passion for architectural visualization
 
 <div>
   <a href="https://www.w3.org/html/">
-    <img src="https://imgs.search.brave.com/eW1tvLYPwdwy1UiGfabNTxoIryGtzsmSp5lEHysdRdc/rs:fit:50x50:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMTA1MS8xMDUx/Mjc3LnBuZw" alt="Html Logo" />
+    <img src="https://imgs.search.brave.com/KhuJ2dCkk8FOHaKID8zYFqiXTuMKMNz9M8_K_PUaBCc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJlZXBuZ2xvZ29z/LmNvbS91cGxvYWRz/L2h0bWw1LWxvZ28t/cG5nL2h0bWw1LWxv/Z28taHRtbC1sb2dv/LTAucG5n" width="55px" height="55px" alt="Html Logo" />
   </a>
 </div>
 <!--
