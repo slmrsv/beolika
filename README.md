@@ -12,12 +12,12 @@ I'm a multidisciplinary developer with a passion for architectural visualization
 
 ## Skills
 
-<div style="display: flex; gap: 2">
+<div style="display: flex; gap: 5px;">
   <a href="https://www.w3.org/html/">
     <img src="https://imgs.search.brave.com/KhuJ2dCkk8FOHaKID8zYFqiXTuMKMNz9M8_K_PUaBCc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJlZXBuZ2xvZ29z/LmNvbS91cGxvYWRz/L2h0bWw1LWxvZ28t/cG5nL2h0bWw1LWxv/Z28taHRtbC1sb2dv/LTAucG5n" width="30px" height="30px" alt="Html Logo" />
   </a>
   <a href="[https://www.w3.org/html/](https://developer.mozilla.org/en-US/docs/Web/CSS)">
-    <img src=https://imgs.search.brave.com/L0tG_ZhCt_flu0NljaSOuDHswuXfdhOwcRS8LJ3r2H0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9icmFuZHMt/YW5kLXNvY2lhbC1t/ZWRpYS9jc3MtaWNv/bi5wbmc" width="30px" height="30px" alt="CSS Logo" />
+    <img src="https://imgs.search.brave.com/L0tG_ZhCt_flu0NljaSOuDHswuXfdhOwcRS8LJ3r2H0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9icmFuZHMt/YW5kLXNvY2lhbC1t/ZWRpYS9jc3MtaWNv/bi5wbmc" width="30px" height="30px" alt="CSS Logo" />
   </a>
   <a href="https://tailwindcss.com/">
     <img src="https://imgs.search.brave.com/JEXDItwrW6zmmSaFC2PjdhVtsmujUBH1mEjdVRthZao/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC90YWlsd2lu/ZC1jc3MtaWNvbi0x/MDI0eDYxNS1mZGVp/czVyMS5wbmc" width="30px" height="30px" alt="Tailwind CSS Logo" />
