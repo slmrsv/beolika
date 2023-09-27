@@ -1,7 +1,6 @@
 # Hi there 👋
 
 ## My name is Sélim Baouz
-
 I'm a muldisciplinary developer with a passion for architectural visualization and immersive experiences.
 
 - 🌱 Based in Asia, I'm a freelance working remotely.
