@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="https://giphy.com/gifs/art-animation-trip-xTiTnjEFmivkL0cfDi" width="100"/>
+  <iframe src="https://giphy.com/embed/xTiTnjEFmivkL0cfDi" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/art-animation-trip-xTiTnjEFmivkL0cfDi">via GIPHY</a></p>
 </div>
 
 ## Hi 👋 My name is Sélim Baouz
