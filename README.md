@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="/1.gif" alt="" width="200" />
+  <img src="/2.gif" alt="" width="200" />
 </div>
 
 ## Hi 👋 My name is Sélim Baouz
