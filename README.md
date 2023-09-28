@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/LKzGYwKzWtsfSPt2Wd/giphy.gif" alt="" width="200" />
+  <img src="https://media.giphy.com/media/lbggjo1iagtAlZdoZG/giphy.gif" alt="" width="200" />
 </div>
 
 ## Hi 👋 My name is Sélim Baouz
