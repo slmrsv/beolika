@@ -1,11 +1,13 @@
-# <h1 style="display: flex; justify-content: center">Multidisciplinary Developer</h1>
+<div id="header" align="center">
+  <img src="https://giphy.com/gifs/art-animation-trip-xTiTnjEFmivkL0cfDi" width="100"/>
+</div>
 
 ## Hi 👋 My name is Sélim Baouz
 
 
-I'm a multidisciplinary developer with a passion for architectural visualization and immersive experiences.
+Creative developer with a passion for architectural visualization and immersive experiences based in Bangkok.
 
-- 🌱 Based in Asia, I'm a freelance working remotely.
+- 👨‍💻 I'm a freelance working remotely.
 - ⚡ I'm perfecting my 3D skills with Blender & R3F.
 - 🤝 I'm open to collaborating.
 - 💬 Enquiries -> hello@selimmersive.com
