@@ -2,7 +2,7 @@
   <img src="https://media.giphy.com/media/lbggjo1iagtAlZdoZG/giphy.gif" alt="" width="200" />
 </div>
 
-## Hi 👋 My name is Sélim Baouz
+## Hi 👋 My name is Sélim
 
 
 Creative developer with a passion for architectural visualization and immersive experiences based in Bangkok.
