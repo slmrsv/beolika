@@ -4,7 +4,7 @@
 
 ## Hi 👋 My name is Sayro
 
-Web developer with 5 years' experience, including 2 years in a start-up, I'm passionate about architectural visualization and immersive experiences. My mission is to help brands design digital experiences that awaken meaningful emotions in their users. Combining skills and creativity with your project, I offer a comprehensive approach to transforming your ideas into memorable digital experiences. Together, we can redefine the future of digital, where every interaction becomes a compelling story, strengthening the bond between your brand and your audience.
+Web developer with 5 years' experience, including 2 years in a start-up, I'm passionate about architectural visualization and immersive experiences.
 
 - 👨‍💻 I'm a freelance working remotely.
 - ⚡ I'm perfecting my 3D skills with Blender.
