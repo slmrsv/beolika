@@ -8,7 +8,7 @@ A FullStack NextJs Developer learning 3D.
 
 ↳ Passionate about architectural visualization and immersive experiences.
 
-📍 Digital Nomade at Bangkok
+📍 Digital Nomad in Bangkok
 
 - 👨‍💻 I'm a freelance working remotely.
 - ⚡ I'm perfecting my 3D skills with Blender.
