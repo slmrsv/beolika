@@ -2,14 +2,16 @@
   <img src="https://media.giphy.com/media/lbggjo1iagtAlZdoZG/giphy.gif" alt="" width="200" />
 </div>
 
-## Hi 👋 My name is Sayro
+## 👋 Hey, I'm Sayro (ENFJ), 
 
-Web developer with 5 years' experience, including 2 years in a start-up, I'm passionate about architectural visualization and immersive experiences.
+A FullStack NextJs Developer learning 3D. 
+↳ Passionate about architectural visualization and immersive experiences.
+📍 Digital Nomade at Bangkok
 
 - 👨‍💻 I'm a freelance working remotely.
 - ⚡ I'm perfecting my 3D skills with Blender.
 - 🤝 I'm open to collaborating.
-- 💬 Enquiries -> sayrodev@gmail.com 
+- 💬 Enquiries -> hello@sayro.dev
 
 ## Skills
 
