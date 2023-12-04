@@ -5,7 +5,9 @@
 ## 👋 Hey, I'm Sayro (ENFJ), 
 
 A FullStack NextJs Developer learning 3D. 
+
 ↳ Passionate about architectural visualization and immersive experiences.
+
 📍 Digital Nomade at Bangkok
 
 - 👨‍💻 I'm a freelance working remotely.
