@@ -2,16 +2,14 @@
   <img src="https://media.giphy.com/media/lbggjo1iagtAlZdoZG/giphy.gif" alt="" width="200" />
 </div>
 
-## 👋 Hey, I'm Sayro (ENFJ)
+## 👋 Hey, I'm a NextJs FullStack Developer with a passion for architectural visualization and immersive experiences.
 
-A NextJs FullStack Developer with a passion for architectural visualization and immersive experiences.
-
-📍 Digital Nomad in Bangkok
+📍 Digital Nomad
 
 - 👨‍💻 I'm a freelance working remotely.
 - ⚡ I'm perfecting my 3D skills with Blender.
 - 🤝 I'm open to collaborating.
-- 💬 Enquiries -> hello@sayro.dev
+- 💬 Enquiries -> hello@beolika.com
 
 ## Skills
 
