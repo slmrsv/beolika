@@ -2,7 +2,7 @@
   <img src="https://media.giphy.com/media/lbggjo1iagtAlZdoZG/giphy.gif" alt="" width="200" />
 </div>
 
-## 👋 Hey, I'm a NextJs FullStack Developer with a passion for architectural visualization and immersive experiences.
+## 👋 Hey, I'm a FullStack Developer & 3D Designer with a passion for architectural visualization and immersive experiences.
 
 📍 Digital Nomad
 
@@ -60,17 +60,3 @@
     <img src="https://imgs.search.brave.com/wFssI1ckPnGoh08obTgvU0RLMkI2wmKdsFWGqYVn2f4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4y/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvaWNvbnMtbWVn/YS1wYWNrLTEtYW5k/LTIvMjU2L0JsZW5k/ZXIucG5n" width="35px" height="35px" alt="Blender Logo" />
   </a>
 </div>
-<!--
-**selimrsv/selimrsv** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
