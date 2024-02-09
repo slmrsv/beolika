@@ -16,7 +16,7 @@ interface SocialProps {
 
 const Social = ({socialLink}: SocialProps) => {
   return (
-    <div className='flex justify-center gap-8'>
+    <div className='flex justify-center gap-5'>
       {socialLink.map((social, index) => (
         <Button
           key={index}
@@ -25,7 +25,7 @@ const Social = ({socialLink}: SocialProps) => {
           asChild
         >
           <Link  href={social.link} target="_blank" rel="noopener noreferrer">
-            {<social.icon className={cn("text-2xl", "md:text-3xl")} />}
+            {<social.icon className={cn("text-[28px]", "md:text-3xl")} />}
           </Link>
         </Button>
       ))}

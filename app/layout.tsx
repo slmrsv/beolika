@@ -39,7 +39,7 @@ export default function RootLayout({
         audioWide.variable
       )} >
         <Providers>
-          <div className="relative flex  flex-col">
+          <div className="relative flex flex-col">
             <Navbar home />
             <div className="flex-1">{children}</div>
           </div>
