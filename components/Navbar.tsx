@@ -3,7 +3,8 @@ import React from 'react';
 import { TbMenu } from "react-icons/tb";
 import { ThemeToggle } from './ThemeToggle';
 import { Switch } from "@/components/ui/switch";
-import { modeStore } from '@/store/modeStore';
+import { modeStore } from '@/stores';
+import { cn } from '@/lib/utils';
 
 const Navbar = ({home}: {home?: boolean}) => {
   const artMode = modeStore((state) => state.artMode);
@@ -14,7 +15,7 @@ const Navbar = ({home}: {home?: boolean}) => {
   };
 
   return (
-    <div className='absolute top-0 z-50 w-full font-audio flex justify-between items-center border-b pb-6'>
+    <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', !artMode && "border-b pb-6")}>
       <div className='flex gap-4 items-center'>
         <Switch onCheckedChange={handleSwitchToggle} checked={artMode} />
         <h3 className="text-xl">{artMode ? "Art Mode" : "Profil Mode" }</h3>
