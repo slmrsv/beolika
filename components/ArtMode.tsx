@@ -26,9 +26,9 @@ const ArtMode = () => {
     };
   }, []);
   return (
-    <div className={cn('flex flex-col justify-center items-center')} ref={ref}>
-      <h1 className={cn("font-audio text-center mt-20 mb-8","lg:hidden")} style={{ fontSize: width / 2 + "px", lineHeight: width / 2.3 +  "px"}}>Beo<br />lika</h1>
-      <h1 className={cn("font-audio text-center hidden leading-initial", "lg:block lg:-mb-14 lg:mt-2", "xl:-mb-20 xl:-mt-2")} style={{ fontSize: width / 4 + "px", lineHeight: width / 3 +  "px"}}>Beolika</h1>
+    <div className={cn('flex flex-col justify-center items-center mb-2 mt-14')} ref={ref}>
+      <h1 className={cn("font-audio text-center my-6 leading-[90%]", "md:hidden")} style={{ fontSize: width / 2.3 + "px"}}>Beo<br />lika</h1>
+      <h1 className={cn("font-audio text-center hidden leading-[100%]", "md:block")} style={{ fontSize: width / 4 + "px"}}>Beolika</h1>
       <p className={cn("font-glacial border-t border-b py-6 w-full text-center", "sm:text-lg", 'md:text-xl')}>FullStack Developer & 3D Designer</p>
       <div className={cn("pt-6", "md:pt-8")}>
         <Social socialLink={[
