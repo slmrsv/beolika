@@ -39,10 +39,12 @@ export default function RootLayout({
         audioWide.variable
       )} >
         <Providers>
-          <Navbar home />
-          {children}
+          <div className="relative flex  flex-col">
+            <Navbar home />
+            <div className="flex-1">{children}</div>
+          </div>
+          <TailwindIndicator />
         </Providers>
-        <TailwindIndicator />
       </body>
     </html>
   );

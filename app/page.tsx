@@ -9,10 +9,10 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className={cn('h-full flex flex-col justify-center items-center mb-2 mt-28', 'xl:mt-32')}>
+    <div className={cn('flex flex-col justify-center items-center mb-2 mt-36', 'xl:mt-40')}>
       <Image src={Profil} alt="Profil" className={cn('rounded-full mb-4', 'md:mb-6', 'xl:w-48 xl:mb-8')} width={160} height={160} />
       <h1 className={cn("font-audio text-[40px]")}>Beolika</h1>
-      <p className={cn("text-[#818181]", "sm:text-lg", 'md:text-xl')}>FullStack Developer & 3D Designer</p>
+      <p className={cn("text-subtitle font-glacial", "sm:text-lg", 'md:text-xl')}>FullStack Developer & 3D Designer</p>
       <div className={cn("pt-6", "md:pt-8")}>
         <Social socialLink={[
           {link: "https://github.com/beolika" , icon: FaGithub},
