@@ -28,6 +28,8 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        foregroundArt: "hsl(var(--accent-foreground-art))",
+        accentArt: "hsl(var(--accent-art))",
         subtitle: "#818181",
         primary: {
           DEFAULT: "hsl(var(--primary))",

@@ -11,6 +11,13 @@ const ArtMode = () => {
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
+  const socialLinks = [
+    {link: "https://github.com/beolika" , icon: FaGithub},
+    {link: "https://instagram.com/beolika" , icon: FaInstagram},
+    {link: "https://discordapp.com/users/849428669180542976" , icon:FaDiscord},
+    {link: "https://www.pinterest.fr/beolika/" , icon: FaPinterest},
+  ];
+
   useEffect(() => {
     const handleResize = () => {
       if (ref?.current) {
@@ -31,15 +38,10 @@ const ArtMode = () => {
       <h1 className={cn("font-audio text-center hidden leading-[100%]", "md:block md:my-6", "xl:my-4")} style={{ fontSize: width / 4 + "px"}}>Beolika</h1>
       <p className={cn("font-glacial border-t border-b py-4 w-full text-center", "sm:text-lg", 'md:text-xl')}>FullStack Developer & 3D Designer</p>
       <div className={cn("pt-5", "md:pt-8")}>
-        <Social socialLink={[
-          {link: "https://github.com/beolika" , icon: FaGithub},
-          {link: "https://instagram.com/beolika" , icon: FaInstagram},
-          {link: "https://discordapp.com/users/849428669180542976" , icon:FaDiscord},
-          {link: "https://www.pinterest.fr/beolika/" , icon: FaPinterest},
-        ]} />
+        <Social socialLink={socialLinks} />
       </div>
       <div className={cn('pt-12 w-full')}>
-        <Button variant="outline" className={cn('font-audio rounded-full w-full py-5', 'xs:w-72 xs:flex xs:mx-auto', "md:w-80", "xl:py-6 xl:w-96")} asChild>
+        <Button variant="outlineArt" className={cn('font-audio rounded-full w-full py-5', 'xs:w-72 xs:flex xs:mx-auto', "md:w-80", "xl:py-6 xl:w-96")} asChild>
           <Link href="mailto:hello@beolika.com" className={cn('xl:text-lg')}>Get in touch</Link>
         </Button>
       </div>
