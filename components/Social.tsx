@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import React from 'react';
 import { Button } from './ui/button';
-import { modeStore } from '@/stores';
 
 interface StyleProps {
     className?: string;
@@ -17,13 +16,12 @@ interface SocialProps {
 }
 
 const Social = ({socialLink}: SocialProps) => {
-  const artMode = modeStore((state) => state.artMode);
   return (
-    <div className='flex justify-center gap-5'>
+    <div className={cn('flex justify-center gap-5', 'lg:gap-8')}>
       {socialLink.map((social, index) => (
         <Button
           key={index}
-          variant={artMode ? "ghostArt" : "ghost"}
+          variant="ghost"
           size="icon"
           asChild
         >

@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Work {
+  id            Int      @id @default(autoincrement())
+  title         String
+  category      String
+  date          String 
+  company       String?
+  role          String?
+  construction  String?
+  content       String?
+  slug          String 
+  pictures      Picture[]
+  createdAt     DateTime @default(now())
+}
+
+model Picture {
+  id            Int      @id @default(autoincrement())
+  workId        Int       
+  image         String
+  alt           String
+  work          Work @relation(fields: [workId], references: [id])
+  createdAt     DateTime @default(now())
+}
+
+model Art {
+  id            Int      @id @default(autoincrement())
+  image         String 
+  alt           String   
+  title         String
+  createdAt     DateTime @default(now())
+}
+
+model Product {
+  id            Int      @id @default(autoincrement())
+  image         String
+  alt           String 
+  name          String
+  price         String
+  category      String
+  detailUrl     String
+  liveUrl       String
+  createdAt     DateTime @default(now())
+}
+
+model Article {
+  id            Int      @id @default(autoincrement())
+  date          String
+  title         String 
+  ReadingTime   String
+  link          String
+  createdAt     DateTime @default(now())
+}

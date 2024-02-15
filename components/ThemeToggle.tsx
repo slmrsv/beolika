@@ -3,15 +3,13 @@
 import { Button } from '@/components/ui/button';
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { useTheme } from 'next-themes';
-import { modeStore } from '@/stores';
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
-  const artMode = modeStore((state) => state.artMode);
 
   return (
     <Button
-      variant={artMode ? "ghostArt" : "ghost"}
+      variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >

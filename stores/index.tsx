@@ -1,11 +1,21 @@
 import { create } from 'zustand';
 
 interface ModeStore {
-  artMode: boolean;
-  changeMode: () => void;
+  isArtMode: boolean;
+  setIsArtMode: () => void;
 }
 
 export const modeStore = create<ModeStore>((set) => ({
-  artMode: false,
-  changeMode: () => set((state) => ({ artMode: !state.artMode })),
+  isArtMode: false,
+  setIsArtMode: () => set((state) => ({ isArtMode: !state.isArtMode })),
+}));
+
+interface MenuStore {
+  isMenuOpen: boolean;
+  setIsMenuOpen: () => void;
+}
+
+export const menuStore = create<MenuStore>((set) => ({
+  isMenuOpen: false,
+  setIsMenuOpen: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
 }));

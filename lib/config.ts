@@ -2,7 +2,7 @@
 
 export const SiteConfig = {
   title: 'Beolika',
-  description: 'FullStack Developer & 3D Artist',
+  description: 'FullStack Developer & 3D Designer',
 } as const;
   
   
