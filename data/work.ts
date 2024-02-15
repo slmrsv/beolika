@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { Work, Case } from "@/lib/types";
+import { Work, Case } from "@/types/types";
 
 export const getWorks = async () => {
   try {

@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { Article } from "@/lib/types";
+import { Article } from "@/types/types";
 
 export const getArticles = async () => {
   try {
