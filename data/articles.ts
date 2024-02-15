@@ -1,8 +1,9 @@
 import { db } from "@/lib/db";
+import { Article } from "@/lib/types";
 
 export const getArticles = async () => {
   try {
-    const articles = await db.article.findMany({
+    const articles: Article[] = await db.article.findMany({
       orderBy: {
         createdAt: 'desc',
       },

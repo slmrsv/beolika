@@ -1,8 +1,9 @@
 import { db } from "@/lib/db";
+import { Work, Case } from "@/lib/types";
 
 export const getWorks = async () => {
   try {
-    const products = await db.work.findMany({
+    const products: Work[] = await db.work.findMany({
       orderBy: {
         createdAt: 'desc',
       },
@@ -22,7 +23,7 @@ export const getWorks = async () => {
 
 export const getWorkBySlug = async (slug: string) => {
   try {
-    const work = await db.work.findFirst({ 
+    const work: Case = await db.work.findFirst({ 
       where: { 
         slug: slug 
       }, 
