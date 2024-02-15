@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import { FaGithub, FaInstagram, FaDiscord, FaFacebook  } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { Button } from './ui/button';
-import Copyright from "./Copyright";
 
 const navLinks = [
   { title: "Home", href: "/"},
@@ -32,14 +31,14 @@ interface MenuProps {
 const Menu = ({handleClose}: MenuProps) => {
 
   return (
-    <div className='absolute top-0 bg-background h-screen w-full'>
-      <div className={cn('flex flex-col uppercase gap-4 font-audio mt-52', "sm:mt-40", "md:gap-6 md:mt-36", "lg:flex-row lg:justify-between lg:gap-0 lg:mb-36 lg:mt-32", "xl:mb-20 xl:py-14")}>
+    <div className='bg-background h-screen w-full flex flex-col items-center justify-center'>
+      <div className={cn('flex flex-col uppercase gap-2 font-audio', "lg:gap-4", "xl:py-14")}>
         {navLinks.map((link, index) => (
           <Button
             key={index}
             variant="ghost"
             size="lg"
-            className={cn("py-6 w-full text-4xl", "sm:text-5xl sm:py-8", "md:text-6xl", "lg:w-auto lg:text-xl lg:py-6", "xl:text-4xl xl:py-6")}
+            className={cn("py-6 w-full text-4xl", "sm:text-5xl sm:py-8", "md:text-5xl md:gap-6", "lg:text-6xl", "xl:text-7xl xl:py-9")}
             asChild
           >
             <Link href={link.href} onClick={handleClose} className="text-4xl py-2">
@@ -47,12 +46,6 @@ const Menu = ({handleClose}: MenuProps) => {
             </Link>
           </Button>
         ))}
-      </div>
-      <div className={cn("absolute bottom-6 w-full flex justify-center border-t py-4", "lg:relative lg:mt-14 lg:flex lg:justify-center lg:border-y lg:py-4")}>
-        <Social socialLink={socialLinks} />
-      </div>
-      <div className="absolute bottom-10 w-full">
-        <Copyright />
       </div>
     </div>
   );

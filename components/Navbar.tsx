@@ -43,7 +43,17 @@ const Navbar = () => {
               <Switch onCheckedChange={setIsArtMode} checked={isArtMode} />
               <h3 className="text-xl">{isArtMode ? "Art Mode" : "Profil Mode" }</h3>
             </div>
-            <ThemeToggle />
+            <div className={cn('flex gap-2 items-center', 'lg:gap-4')}>
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                onClick={setIsMenuOpen}
+              >
+                {isMenuOpen ? <IoCloseOutline className='cursor-pointer' /> : <TbMenu className='cursor-pointer' />}
+              </Button>
+              <ThemeToggle />
+            </div>
           </>)}
       </div>
       {isMenuOpen && <Menu handleClose={setIsMenuOpen} />}
