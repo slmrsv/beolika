@@ -1,10 +1,7 @@
 "use client";
 import React from "react";
 import Link from 'next/link';
-import Social from './Social';
 import { cn } from '@/lib/utils';
-import { FaGithub, FaInstagram, FaDiscord, FaFacebook  } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
 import { Button } from './ui/button';
 
 const navLinks = [
@@ -14,14 +11,6 @@ const navLinks = [
   { title: "Art", href: "/art"},
   { title: "Products", href: "/products"},
   { title: "Blog", href: "/blog"},
-];
-
-const socialLinks = [
-  {link: "https://www.facebook.com/beolika/" , icon: FaFacebook},
-  {link: "https://instagram.com/beolika" , icon: FaInstagram},
-  {link: "https://github.com/beolika" , icon: FaGithub},
-  {link: "https://discordapp.com/users/849428669180542976" , icon:FaDiscord},
-  {link: "mailto:hello@beolika.com" , icon: IoIosMail},
 ];
   
 interface MenuProps {
