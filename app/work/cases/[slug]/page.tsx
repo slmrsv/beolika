@@ -3,6 +3,7 @@ import { getWorkBySlug } from "@/data/work";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+
 export default async function CasesPage ({ params }: { params: { slug: string } }) {
   const cases = await getWorkBySlug(params.slug);
   

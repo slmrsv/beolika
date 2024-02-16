@@ -13,7 +13,7 @@ export default async function WorkPage() {
         {works?.map((work, index) => (
           <Link key={index} href={`/work/cases/${work.slug}`}>
             <div             
-              className={cn('border-y flex items-center justify-between py-6 w-full cursor-pointer text-subtitle border-subtitle hover:text-primary hover:border-primary', 'xl:py-8',               
+              className={cn('border-y flex items-center justify-between py-6 w-full cursor-pointer hover:text-background hover:bg-primary hover:px-6', 'hover:md:px-8', 'hover:xl:px-14 xl:py-8',               
               )}>
               <div className={cn('space-y-1 text-left', 'xl:space-y-4')}>
                 <p className={cn('font-audio text-3xl', 'xl:text-5xl')}>{work.title}</p>
