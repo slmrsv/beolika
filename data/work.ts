@@ -35,6 +35,7 @@ export const getWorkBySlug = async (slug: string) => {
         content: true,
         date: true,
         role: true,
+        siteUrl: true,
         slug: true,
         title: true
       }

@@ -38,14 +38,14 @@ function AboutPage() {
         <h3 className={cn('font-audio text-4xl uppercase', "lg:text-5xl", "xl:text-7xl")}>Services</h3>
         <div className={cn('lg:hidden')}>
           {ServicesMobile.map((service, index) => (
-            <div key={index} className={cn('border-t py-8 w-full', index === 4 && service.isRightAligned && "border-t-0")}>
+            <div key={index} className={cn('border-t py-8 w-full', index === 4 && service.isRightAligned && "border-t-0", index === 7 && "border-b")}>
               <p className={cn('font-audio text-3xl', service.isRightAligned && "text-right", index === 4 && service.isRightAligned && "mt-20")}>{service.title}</p>
             </div>
           ))}
         </div>
         <div className={cn('hidden', 'lg:grid lg:grid-cols-2 lg:justify-between lg:w-full')}>
           {ServicesWeb.map((service, index) => (
-            <div key={index} className={cn("border-y py-8 w-full")}>
+            <div key={index} className={cn("border-b py-8 w-full", (index === 0 || index === 1) && "border-t" )}>
               <p className={cn('font-audio lg:text-2xl', 'xl:text-4xl', service.isRightAligned && "text-right")}>{service.title}</p>
             </div>
           ))}

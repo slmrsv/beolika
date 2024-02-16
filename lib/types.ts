@@ -43,13 +43,8 @@ export type Case = {
     construction: string | null;
     content: string | null;
     slug: string;
-    pictures: {
-        id: number;
-        workId: number;
-        image: string;
-        alt: string;
-        createdAt: Date;
-    }[];
+    siteUrl: string | null;
+    pictures: Picture[];
 } | null;
 
 export type Picture = {

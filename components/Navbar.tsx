@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import Menu from './Menu';
 import Link from 'next/link';
+import { IoIosArrowDropleft } from "react-icons/io";
 
 const Navbar = () => {
   const pathname = usePathname(); 
@@ -16,16 +17,21 @@ const Navbar = () => {
   const setIsArtMode = modeStore((state) => state.setIsArtMode);
   const isMenuOpen = menuStore((state) => state.isMenuOpen);
   const setIsMenuOpen = menuStore((state) => state.setIsMenuOpen);
-
   return (
     <>
-      <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', !isArtMode && "border-b pb-6", pathname !== "/" && "border-b pb-6")}>
+      <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', !isArtMode && "border-b pb-6", pathname !== "/" && "border-b pb-6", isMenuOpen && "border-none")}>
         {pathname !== "/" ? (
           <>
-            <Link href="/" className='text-xl'>
-              Beolika
-            </Link>
-            <div className={cn('flex gap-2 items-center', 'lg:gap-4')}>
+            {pathname.includes("cases") && !isMenuOpen ? (
+              <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
+                <IoIosArrowDropleft className="text-2xl"/>
+                <Link href="../" className="text-xl">Back</Link>
+              </div>
+            ) : !isMenuOpen && <Link href="/" className='text-xl'>Beolika</Link>}
+            
+            <div className={cn('flex gap-2 items-center', 'lg:gap-4', {
+              "justify-end w-full": isMenuOpen
+            })}>
               <Button
                 variant="ghost"
                 size="icon"

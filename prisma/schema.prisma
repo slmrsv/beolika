@@ -20,6 +20,7 @@ model Work {
   role          String?
   construction  String?
   content       String?
+  siteUrl       String?
   slug          String 
   pictures      Picture[]
   createdAt     DateTime @default(now())
