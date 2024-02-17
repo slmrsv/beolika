@@ -1,4 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
+import Copyright from "@/components/Copyright";
 import { getArticles } from "@/data/articles";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +16,7 @@ export default async function BlogPage () {
           </div>
         ))}
       </div>
+      <Copyright />
     </div>
   );
 }

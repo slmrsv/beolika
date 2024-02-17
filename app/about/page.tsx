@@ -1,4 +1,5 @@
 import Copyright from '@/components/Copyright';
+import PricingCard from '@/components/PricingCard';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import React from 'react';
@@ -57,6 +58,23 @@ function AboutPage() {
               <p className={cn('font-audio lg:text-2xl', 'xl:text-4xl', service.isRightAligned && "text-right")}>{service.title}</p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className='space-y-14'>
+        <h3 className={cn('font-audio text-4xl uppercase', "lg:text-5xl", "xl:text-7xl")}>Pricing</h3>
+        <div className={cn('flex flex-col w-full gap-6', "lg:flex-row lg:justify-between")}>
+          <PricingCard 
+            title='Daily Rate' 
+            price='385' 
+            typeOfDate='day' 
+            description={`Average daily rate \n Remote working`} 
+          />
+          <PricingCard 
+            title='Maintenance' 
+            price='500' 
+            typeOfDate='mo' 
+            description='Updates, backups, security, seo, hosting' 
+          />
         </div>
       </div>
       <div className={cn('space-y-14 mx-auto text-center')}>

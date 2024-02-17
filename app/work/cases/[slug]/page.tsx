@@ -48,7 +48,7 @@ export default async function CasesPage ({ params }: { params: { slug: string } 
         {cases?.siteUrl && (
           <div className={cn('w-full')}>
             <Button variant="outline" className={cn('font-audio rounded-full w-full py-5', 'xs:w-72 xs:flex xs:mx-auto', "md:w-80", "xl:py-6 xl:w-96")} asChild>
-              <Link href={cases?.siteUrl} className={cn('xl:text-lg')}>View Project</Link>
+              <Link href={cases?.siteUrl} className={cn('xl:text-lg')} target="_blank" rel="noopener noreferrer">View Project</Link>
             </Button>
           </div>
         )}
