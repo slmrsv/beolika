@@ -37,7 +37,7 @@ const ArtMode = () => {
   return (
     <div className={cn('flex flex-col justify-center items-center mb-2 mt-14', "xs:mt-10", "md:mt-20", "lg:mt-6", "xl:mt-2")} ref={ref}>
       <h1 className={cn("font-audio text-center my-6 leading-[90%]", "xs:my-4", "sm:my-2", "md:hidden")} style={{ fontSize: width / 2.3 + "px"}}>Beo<br />lika</h1>
-      <h1 className={cn("font-audio text-center hidden leading-[100%]", "md:block md:my-6", "xl:my-4")} style={{ fontSize: width / 4 + "px"}}>{SiteConfig.title}</h1>
+      <h1 className={cn("font-audio text-center hidden leading-[100%]", "md:block md:my-6", "xl:my-4")} style={{ fontSize: width / 4 + "px"}}>{SiteConfig.title.default}</h1>
       <p className={cn("font-glacial border-t border-b py-4 w-full text-center", "sm:text-lg", 'md:text-xl')}>{SiteConfig.description}</p>
       <div className={cn("pt-5", "md:pt-8")}>
         <Social socialLink={socialLinks} />

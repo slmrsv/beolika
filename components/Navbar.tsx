@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import Menu from './Menu';
 import Link from 'next/link';
 import { IoIosArrowDropleft } from "react-icons/io";
+import { Suspense } from "react";
+import { SkeletonNavBar } from "./skeleton/SkeletonNavBar";
 
 const Navbar = () => {
   const pathname = usePathname(); 
@@ -18,14 +20,14 @@ const Navbar = () => {
   const isMenuOpen = menuStore((state) => state.isMenuOpen);
   const setIsMenuOpen = menuStore((state) => state.setIsMenuOpen);
   return (
-    <>
+    <Suspense fallback={<SkeletonNavBar />}>
       <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', !isArtMode && "border-b pb-6", pathname !== "/" && "border-b pb-6", isMenuOpen && "border-none")}>
         {pathname !== "/" ? (
           <>
             {pathname.includes("cases") && !isMenuOpen ? (
               <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
                 <IoIosArrowDropleft className="text-2xl"/>
-                <Link href="../" className="text-xl">Back</Link>
+                <Link href="/work" className="text-xl">Back</Link>
               </div>
             ) : !isMenuOpen && <Link href="/" className='text-xl'>Beolika</Link>}
             
@@ -63,7 +65,7 @@ const Navbar = () => {
           </>)}
       </div>
       {isMenuOpen && <Menu handleClose={setIsMenuOpen} />}
-    </>
+    </Suspense>
   );
 };
 

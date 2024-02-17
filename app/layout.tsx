@@ -8,8 +8,19 @@ import Navbar from "@/components/Navbar";
 import LayoutClient from "@/components/LayoutClient";
 
 export const metadata: Metadata = {
-  title: SiteConfig.title,
+  metadataBase: SiteConfig.metadataBase,
+  title: {
+    default: SiteConfig.title.default,
+    template: SiteConfig.title.template,
+  },
   description: SiteConfig.description,
+  generator: SiteConfig.generator,
+  applicationName: SiteConfig.applicationName,
+  referrer: SiteConfig.referrer,
+  keywords: ['Next.js', 'NextJS', 'Next', 'React.js', 'React Js', 'ReactJs', 'Typescript', 'Tailwindcss', 'JavaScript', 'Shadnc', 'ShadncUi', 'shadncui', 'Prisma', 'Zustand', 'Freelance', 'Web Developer', 'FullStack', 'Developer', 'Vercel', '3D', 'Designer', '3D Designer', 'Product', 'Products', 'Blog', 'Articles'],
+  authors: [{ name: SiteConfig.authors.name, url: SiteConfig.authors.url }],
+  creator: SiteConfig.creator,
+  publisher: SiteConfig.publisher,
 };
 
 export default function RootLayout({
