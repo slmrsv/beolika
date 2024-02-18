@@ -1,5 +1,4 @@
 export type Art = { 
-    id: number; 
     image: string; 
     alt: string; 
     title: string; 
@@ -7,21 +6,22 @@ export type Art = {
 }
 
 export type Article = {
-    id: number;
     date: string;
     title: string;
     ReadingTime: string;
     link: string;
+    categoryId: number;
+    category: ItemCategory;
     createdAt: Date;
 }
 
 export type Product = {
-    id: number;
     image: string;
     alt: string;
     name: string;
     price: string;
-    category: string;
+    categoryId: number;
+    category: ProductCategory;
     detailUrl: string;
     liveUrl: string;
     createdAt: Date;
@@ -48,9 +48,18 @@ export type Case = {
 } | null;
 
 export type Picture = {
-    id: number;
-    workId: number;
     image: string;
     alt: string;
-    createdAt: Date;
+}
+
+export type ItemCategory = {
+    id: number; 
+    category: string;
+    createdAt: Date; 
+}
+
+export type ProductCategory = { 
+    id: number; 
+    category: string; 
+    createdAt: Date; 
 }

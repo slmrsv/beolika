@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { Work, Case } from "@/lib/types";
+import { Work, Case } from "@/types/types";
 
 export const getWorks = async () => {
   try {
@@ -28,16 +28,16 @@ export const getWorkBySlug = async (slug: string) => {
         slug: slug 
       }, 
       select: {
-        pictures: true,
+        title: true,
         category: true,
+        date: true,
         company: true,
+        role: true,
         construction: true,
         content: true,
-        date: true,
-        role: true,
-        siteUrl: true,
         slug: true,
-        title: true
+        siteUrl: true,
+        pictures: true
       }
     });
     

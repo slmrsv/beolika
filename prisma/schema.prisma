@@ -15,20 +15,20 @@ model Work {
   id            Int      @id @default(autoincrement())
   title         String
   category      String
-  date          String 
+  date          String
   company       String?
   role          String?
   construction  String?
   content       String?
   siteUrl       String?
-  slug          String 
+  slug          String
   pictures      Picture[]
   createdAt     DateTime @default(now())
 }
 
 model Picture {
   id            Int      @id @default(autoincrement())
-  workId        Int       
+  workId        Int
   image         String
   alt           String
   work          Work @relation(fields: [workId], references: [id])
@@ -37,8 +37,8 @@ model Picture {
 
 model Art {
   id            Int      @id @default(autoincrement())
-  image         String 
-  alt           String   
+  image         String
+  alt           String
   title         String
   createdAt     DateTime @default(now())
 }
@@ -49,7 +49,8 @@ model Product {
   alt           String 
   name          String
   price         String
-  category      String
+  categoryId    Int
+  category      ProductCategory @relation(fields: [categoryId], references: [id])
   detailUrl     String
   liveUrl       String
   createdAt     DateTime @default(now())
@@ -61,5 +62,21 @@ model Article {
   title         String 
   ReadingTime   String
   link          String
+  categoryId    Int     
+  category      ItemCategory @relation(fields: [categoryId], references: [id])
   createdAt     DateTime @default(now())
+}
+
+model ItemCategory {
+  id            Int      @id @default(autoincrement())
+  category      String
+  article       Article[]
+  createdAt     DateTime @default(now())    
+}
+
+model ProductCategory {
+  id           Int      @id @default(autoincrement())
+  category     String
+  product      Product[]
+  createdAt    DateTime @default(now())
 }

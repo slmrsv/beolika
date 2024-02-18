@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { Product } from "@/lib/types";
+import { Product } from "@/types/types";
 
 export const getProducts = async () => {
   try {
@@ -7,6 +7,17 @@ export const getProducts = async () => {
       orderBy: {
         createdAt: 'desc',
       },
+      select: {
+        image: true,
+        alt: true,
+        name: true,
+        price: true,
+        categoryId: true,
+        category: true,
+        detailUrl: true,
+        liveUrl: true,
+        createdAt: true,
+      }
     });
   
     return products;

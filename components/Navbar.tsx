@@ -21,7 +21,12 @@ const Navbar = () => {
   const setIsMenuOpen = menuStore((state) => state.setIsMenuOpen);
   return (
     <Suspense fallback={<SkeletonNavBar />}>
-      <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', !isArtMode && "border-b pb-6", pathname !== "/" && "border-b pb-6", isMenuOpen && "border-none")}>
+      <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', 
+        {
+          "justify-end": isMenuOpen && pathname === "/",
+          "border-b pb-6": !isArtMode || pathname !== "/",
+          "border-none": isMenuOpen
+        })}>
         {pathname !== "/" ? (
           <>
             {pathname.includes("cases") && !isMenuOpen ? (
@@ -31,9 +36,10 @@ const Navbar = () => {
               </div>
             ) : !isMenuOpen && <Link href="/" className='text-xl'>Beolika</Link>}
             
-            <div className={cn('flex gap-2 items-center', 'lg:gap-4', {
-              "justify-end w-full": isMenuOpen
-            })}>
+            <div className={cn('flex gap-2 items-center', 'lg:gap-4', 
+              {
+                "justify-end w-full": isMenuOpen
+              })}>
               <Button
                 variant="ghost"
                 size="icon"
@@ -47,7 +53,10 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <div className='flex gap-4 items-center'>
+            <div className={cn('flex gap-4 items-center', 
+              {
+                "hidden": isMenuOpen
+              })}>
               <Switch onCheckedChange={setIsArtMode} checked={isArtMode} />
               <h3 className="text-xl">{isArtMode ? "Art Mode" : "Profil Mode" }</h3>
             </div>
