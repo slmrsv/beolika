@@ -20,7 +20,7 @@ const ArticleCard = ({
 
   return (
     <Card
-      className={cn("group min-h-80 flex flex-col rounded-3xl h-full text-primary hover:bg-primary hover:text-background font-audio p-2 space-y-4", "md:space-y-8", "lg:space-y-10 lg:min-h-96", "xl:space-y-14 xl:min-h-[400px]")}>
+      className={cn("min-h-80 flex flex-col rounded-3xl h-full text-primary font-audio p-2 space-y-4", "md:space-y-8", "lg:space-y-10 lg:min-h-96", "xl:space-y-14 xl:min-h-[400px]")}>
       <CardHeader className={cn("text-xs", "lg:text-base")}>
         {date}
       </CardHeader>
@@ -30,7 +30,7 @@ const ArticleCard = ({
       <CardFooter className={cn("font-glacial text-sm flex items-center justify-between text-subtitle", "lg:text-lg")}>
         {readingTime}
         <Link href={link} target="_blank" rel="noopener noreferrer">
-          <IoIosArrowDropright className={cn('text-2xl text-primary group-hover:text-background', 'text-4xl')} />
+          <IoIosArrowDropright className={cn('text-2xl hover:text-primary', 'text-4xl')} />
         </Link>
       </CardFooter>
     </Card>
