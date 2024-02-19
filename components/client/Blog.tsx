@@ -32,9 +32,9 @@ const Blog = ({articles}: BlogProps) => {
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem onClick={e => e.stopPropagation()} value="All">All</SelectItem>
-              <SelectItem onClick={e => e.stopPropagation()} value="Development">Development</SelectItem>
-              <SelectItem onClick={e => e.stopPropagation()} value="Psychology">Psychology</SelectItem>
+              <SelectItem value="All">All</SelectItem>
+              <SelectItem value="Development">Development</SelectItem>
+              <SelectItem value="Psychology">Psychology</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -46,9 +46,9 @@ const Blog = ({articles}: BlogProps) => {
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem onClick={e => e.stopPropagation()} value="All">All</SelectItem>
-              <SelectItem onClick={e => e.stopPropagation()} value="Development">Development</SelectItem>
-              <SelectItem onClick={e => e.stopPropagation()} value="Psychology">Psychology</SelectItem>
+              <SelectItem value="All">All</SelectItem>
+              <SelectItem value="Development">Development</SelectItem>
+              <SelectItem value="Psychology">Psychology</SelectItem>
             </SelectContent>
           </Select>
         </div>

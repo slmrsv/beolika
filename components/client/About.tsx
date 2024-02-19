@@ -11,14 +11,10 @@ const About = () => {
     { title: "Back-End", isRightAligned: false},
     { title: "Web Design", isRightAligned: false},
     { title: "3D Design", isRightAligned: false},
-    { title: "SEO", isRightAligned: false},
-    { title: "Maintenance", isRightAligned: false},
     { title: "Application Web", isRightAligned: true},
     { title: "Landing Page", isRightAligned: true},
     { title: "E-Commerce", isRightAligned: true},
     { title: "SaaS", isRightAligned: true},
-    { title: "CMS", isRightAligned: true},
-    { title: "Hosting", isRightAligned: true},
   ];
     
   const ServicesWeb = [
@@ -30,10 +26,6 @@ const About = () => {
     { title: "E-Commerce", isRightAligned: true},
     { title: "3D Design", isRightAligned: false},
     { title: "SaaS", isRightAligned: true},
-    { title: "SEO", isRightAligned: false},
-    { title: "CMS", isRightAligned: true},
-    { title: "Maintenance", isRightAligned: false},
-    { title: "Hosting", isRightAligned: true},
   ];
       
   return (
@@ -49,13 +41,13 @@ const About = () => {
           {ServicesMobile.map((service, index) => (
             <div key={index} className={cn('border-t py-8 w-full', 
               {
-                "border-t-0": index === 6 && service.isRightAligned,
-                "border-b": index === 11
+                "border-t-0": index === 4 && service.isRightAligned,
+                "border-b": index === 7
               })}>
               <p className={cn('font-audio text-3xl', 
                 {
                   "text-right": service.isRightAligned,
-                  "mt-20": index === 6 && service.isRightAligned
+                  "mt-20": index === 4 && service.isRightAligned
                 })}>{service.title}</p>
             </div>
           ))}

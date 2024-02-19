@@ -20,7 +20,7 @@ const PricingCard = ({
       <CardHeader>
         <h6 className={cn("text-xl font-audio", "lg:text-2xl", "xl:text-3xl")}>{title}</h6>
       </CardHeader>
-      <CardContent className={cn("py-6", "md:pt-2", "lg:py-10", "xl:py-14")}>
+      <CardContent className={cn("py-10", "md:pt-2", "lg:py-14", "xl:py-20")}>
         <p className={cn("text-5xl font-audio", "xs:text-6xl", "xl:text-8xl")}>€{price}
           <span className={cn("font-glacial text-xs", "xs:text-base", "lg:text-lg")}>
         /{typeOfDate}
