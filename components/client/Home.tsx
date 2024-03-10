@@ -70,13 +70,6 @@ const Home = ({works, arts, articles}: WorksProps) => {
   
   });
   
-  /* const socialLinks = [
-      {link: "https://www.facebook.com/beolika/" , icon: FaFacebook},
-      {link: "https://instagram.com/beolika" , icon: FaInstagram},
-      {link: "https://github.com/beolika" , icon: FaGithub},
-      {link: "https://discordapp.com/users/849428669180542976" , icon:FaDiscord},
-    ]; */
-  
   useEffect(() => {
     const handleResize = () => {
       if (ref?.current) {
@@ -84,7 +77,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
       }
     };
   
-    handleResize(); // Initial measurement
+    handleResize(); 
     window.addEventListener("resize", handleResize);
   
     return () => {
@@ -94,7 +87,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
   
   return (
     <div ref={ref} className={cn("space-y-20", "md:space-y-44")}>
-      <section className={cn('h-[85vh] flex flex-col justify-center items-center mb-2 mt-14', "xs:mt-10", "md:mt-5", "lg:mt-6", "xl:-mt-5 xl:h-[95vh]")}>
+      <section className={cn('h-[80vh] flex flex-col justify-center items-center mb-2 mt-14', "xs:mt-10", "md:mt-5", "lg:mt-6", "xl:-mt-5 xl:h-[95vh]")}>
         <h1 className={cn("font-audio text-center leading-[90%] border-b", "xl:mt-5")} style={{ fontSize: width / 4 + "px"}}>Beolika</h1>
         <div className={cn("flex justify-between mt-1 w-full uppercase text-[8px] font-sync", "xs:text-[10px]", "sm:text-xs", "xl:text-xl xl:mt-4")}>
           <p>Available WorldWide</p>
@@ -106,15 +99,17 @@ const Home = ({works, arts, articles}: WorksProps) => {
         </div>
       </section>
       <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('font-audio font-bold text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>My<br />Services</h3>
+        <h3 className={cn('font-audio text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>My<br />Services</h3>
         <div className={cn('py-6', 'xl:py-8')}>
           {[
-            {title: "Product Development"},
-            {title: "Front Development"},
-            {title: "Back Development"},
+            {title: "Web Development"},
             {title: "CMS/Serveless"},
+            {title: "Landing Page"},
             {title: "E-Commerce"},
             {title: "3D Design"},
+            {title: "APP Web"},
+            {title: "SAAS"},
+            {title: "SEO"},
           ].map((services, index) => (
             <p key={index} className={cn('font-sync py-4 text-2xl border-b uppercase duration-500 delay-75', "hover:border-transparent hover:text-background hover:px-6 hover:md:px-8 hover:bg-primary hover:rounded-tl-3xl hover:rounded-br-3xl hover:xl:px-10", 'xl:text-7xl', 
               {
@@ -130,7 +125,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         <p>Beolika is my artistic name, my real name is Sélim Baouz. My aim is to design solutions at the intersection of visual innovation and functionality. I offer a holistic approach to transforming ideas into digital experiences.</p>
       </div>
       <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('font-audio font-bold text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Featured<br />Projects</h3>
+        <h3 className={cn('font-audio text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Featured<br />Projects</h3>
         <div>
           {works && works.slice(0,6).map((work, index) => (
             <Link key={index} href={`/work/cases/${work.slug}`}>
@@ -159,7 +154,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         <p className={cn("text-right indent-2", "xl:w-[1200px]")}>Passionate about architectural visualization, I like to create 3D spaces where the boundary between real and imaginary no longer exists.</p>
       </div>
       <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('font-audio font-bold text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Play<br />Ground</h3>
+        <h3 className={cn('font-audio text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Play<br />Ground</h3>
         <div className={cn("space-y-8", "xl:grid xl:grid-cols-3 xl:gap-6 xl:space-y-0")}>
           {arts?.slice(0,3).map((art, index) => (
             <div key={index} className={cn("space-y-4")}>
@@ -176,7 +171,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         <p>Apart from projects, I write web content on development and psychology for the Medium platform. I love sharing the knowledge I've gained with the community.</p>
       </div>
       <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('font-audio font-bold text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Latest<br />News</h3>
+        <h3 className={cn('font-audio text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Latest<br />News</h3>
         <div className={cn("space-y-8", "md:grid md:grid-cols-2 md:space-y-0 md:gap-6", "xl:grid xl:grid-cols-3")}>
           {articles?.slice(0,3).map((article, index) => (
             <div key={index}>
@@ -189,7 +184,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         </Button>
       </section>
       <section className={cn("space-y-10 py-20", "md:text-left md:mx-0","xl:space-y-20")}>
-        <h3 className={cn('font-audio font-bold text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Inquiries</h3>
+        <h3 className={cn('font-audio text-5xl', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Inquiries</h3>
         <div className={cn("md:flex md:justify-between md:items-end")}>
           <div>
             <p className={cn('font-sync mx-auto pb-10', "md:mx-0","xl:text-2xl xl:w-[850px]")}>
