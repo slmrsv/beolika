@@ -25,7 +25,7 @@ const Products = ({products}: ProductsProps) => {
   return (
     <div className={cn('my-44 space-y-28 text-xl w-full', "md:text-left md:text-2xl", "xl:text-4xl")}>
       <div className={cn("lg:flex lg:flex-row lg:justify-between lg:gap-32 lg:items-center")}>
-        <h3 className={cn('font-audio text-4xl uppercase text-center', 'sm:text-5xl', "md:text-5xl", "xl:text-left xl:text-7xl")}>Products</h3>
+        <h3 className={cn('font-audio font-bold text-5xl text-center', 'sm:text-6xl', 'md:text-left', "lg:text-5xl", "xl:text-[150px]")}>Products</h3>
         <div className={cn("hidden", "lg:block")}>
           <Select value={selectedCategory} onValueChange={(e) => setSelectedCategory(e)}>
             <SelectTrigger className={cn("w-full", "lg:w-72")}>
@@ -39,7 +39,7 @@ const Products = ({products}: ProductsProps) => {
           </Select>
         </div>
       </div>
-      <div className={cn("space-y-8", "md:grid md:grid-cols-2 md:space-y-0 md:gap-6", "xl:grid-cols-3 xl:gap-6 xl:space-y-0")}>
+      <div className={cn("space-y-8", "lg:grid lg:grid-cols-2 lg:space-y-0 lg:gap-6", "xl:grid-cols-3 xl:gap-6 xl:space-y-0")}>
         <div className={cn("lg:hidden")}>
           <Select value={selectedCategory} onValueChange={(e) => setSelectedCategory(e)}>
             <SelectTrigger className={cn("w-full", "lg:w-72")}>

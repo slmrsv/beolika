@@ -20,14 +20,14 @@ const ArticleCard = ({
 
   return (
     <Card
-      className={cn("min-h-80 flex flex-col rounded-3xl h-full text-primary font-audio p-2 space-y-4", "md:space-y-8", "lg:space-y-10 lg:min-h-96", "xl:space-y-14 xl:min-h-[400px]")}>
+      className={cn("min-h-80 flex flex-col h-full text-primary font-sync p-2 space-y-4", "md:space-y-8", "lg:space-y-10 lg:min-h-96", "xl:space-y-14 xl:min-h-[400px]")}>
       <CardHeader className={cn("text-xs", "lg:text-base")}>
         {date}
       </CardHeader>
-      <CardContent className={cn("text-xl flex-grow", "lg:w-[350px]", "xl:text-2xl xl:w-[400px]", "2xl:w-[450px]")}>
+      <CardContent className={cn("text-base leading-8 flex-grow", "xs:leading-9 xs:text-lg", "lg:text-xl lg:w-[350px]", "xl:w-[400px] xl:leading-10", "2xl:w-[450px]")}>
         <h6>{title}</h6>
       </CardContent>
-      <CardFooter className={cn("font-glacial text-sm flex items-center justify-between text-subtitle", "lg:text-lg")}>
+      <CardFooter className={cn("font-sync text-xs flex items-center justify-between text-subtitle", "lg:text-base")}>
         {readingTime}
         <Link href={link} target="_blank" rel="noopener noreferrer">
           <IoIosArrowDropright className={cn('text-2xl hover:text-primary', 'text-4xl')} />

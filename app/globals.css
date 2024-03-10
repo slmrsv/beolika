@@ -74,3 +74,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.quote {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 5.9rem;
+}
+
+.char {
+  transform: translateY(115px);
+  transition: tranform 5s;
+}
+
+.circle {
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+}

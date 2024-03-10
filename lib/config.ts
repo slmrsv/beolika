@@ -6,7 +6,7 @@ export const SiteConfig = {
     default: 'Beolika',
     template: `Beolika - %s`,
   },
-  description: 'FullStack Developer & 3D Designer',
+  description: 'A creative developer who combines technical mastery with creative sensivity to forge unique, engaging and memorable digital experiences.',
   generator: 'NextJs',
   applicationName: 'Beolika',
   referrer: 'origin-when-cross-origin',

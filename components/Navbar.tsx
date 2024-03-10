@@ -2,8 +2,7 @@
 import { TbMenu } from "react-icons/tb";
 import { IoCloseOutline } from "react-icons/io5";
 import { ThemeToggle } from './ThemeToggle';
-import { Switch } from "@/components/ui/switch";
-import { menuStore, modeStore } from '@/stores';
+import { menuStore } from '@/stores';
 import { cn } from '@/lib/utils';
 import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
@@ -12,11 +11,10 @@ import Link from 'next/link';
 import { IoIosArrowDropleft } from "react-icons/io";
 import { Suspense } from "react";
 import { SkeletonNavBar } from "./skeleton/SkeletonNavBar";
+import { SiteConfig } from "@/lib/config";
 
 const Navbar = () => {
   const pathname = usePathname(); 
-  const isArtMode = modeStore((state) => state.isArtMode);
-  const setIsArtMode = modeStore((state) => state.setIsArtMode);
   const isMenuOpen = menuStore((state) => state.isMenuOpen);
   const setIsMenuOpen = menuStore((state) => state.setIsMenuOpen);
   return (
@@ -24,7 +22,6 @@ const Navbar = () => {
       <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', 
         {
           "justify-end": isMenuOpen && pathname === "/",
-          "border-b pb-6": !isArtMode || pathname !== "/",
           "border-none": isMenuOpen
         })}>
         {pathname !== "/" ? (
@@ -32,9 +29,9 @@ const Navbar = () => {
             {pathname.includes("cases") && !isMenuOpen ? (
               <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
                 <IoIosArrowDropleft className="text-2xl"/>
-                <Link href="/work" className="text-xl">Back</Link>
+                <Link href="/work" className="text-xl font-sync uppercase">Back</Link>
               </div>
-            ) : !isMenuOpen && <Link href="/" className='text-xl'>Beolika</Link>}
+            ) : !isMenuOpen && <Link href="/" className='text-xl'>{SiteConfig.title.default}</Link>}
             
             <div className={cn('flex gap-2 items-center', 'lg:gap-4', 
               {
@@ -57,8 +54,6 @@ const Navbar = () => {
               {
                 "hidden": isMenuOpen
               })}>
-              <Switch onCheckedChange={setIsArtMode} checked={isArtMode} />
-              <h3 className="text-xl">{isArtMode ? "Art Mode" : "Profil Mode" }</h3>
             </div>
             <div className={cn('flex gap-2 items-center', 'lg:gap-4')}>
               <Button

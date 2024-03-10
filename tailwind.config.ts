@@ -20,7 +20,8 @@ const config = {
     extend: {
       fontFamily: {
         glacial: ["var(--font-glacial)"],
-        audio: ["var(--font-audio)"]
+        audio: ["var(--font-audio)"],
+        sync: ["var(--font-sync)"]
       },
       colors: {
         border: "hsl(var(--border))",

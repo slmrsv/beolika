@@ -25,9 +25,9 @@ const ProductCard = ({
   alt
 }: ProductCardProps) => {
   return (
-    <Card className="rounded-3xl text-primary">
+    <Card className="text-primary">
       <CardHeader>
-        <Image src={picture} alt={alt} width={1080} height={1080} className={cn("w-full bg-gray-300 rounded-3xl h-auto")} />
+        <Image src={picture} alt={alt} width={1080} height={1080} className={cn("w-full bg-gray-300 h-auto")} />
       </CardHeader>
       <CardContent className={cn("space-y-2", "md:pt-2")}>
         <div className={cn("flex justify-between font-audio text-lg", "sm:text-2xl")}>

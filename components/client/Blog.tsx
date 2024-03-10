@@ -25,7 +25,7 @@ const Blog = ({articles}: BlogProps) => {
   return (
     <div className={cn('my-44 space-y-28 text-xl w-full', "md:text-left md:text-2xl", "xl:text-4xl")}>
       <div className={cn("lg:flex lg:flex-row lg:justify-between lg:gap-32 lg:items-center")}>
-        <h3 className={cn('font-audio text-4xl uppercase text-center', 'sm:text-5xl', "md:text-5xl", "xl:text-left xl:text-7xl")}>Articles</h3>
+        <h3 className={cn('font-audio font-bold text-5xl text-center', 'sm:text-6xl', 'md:text-left', "lg:text-5xl", "xl:text-[150px]")}>Articles</h3>
         <div className={cn("hidden", "lg:block")}>
           <Select value={selectedCategory} onValueChange={(e) => setSelectedCategory(e)}>
             <SelectTrigger className={cn("w-full", "lg:w-72")}>
