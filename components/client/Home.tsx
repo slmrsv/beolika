@@ -96,7 +96,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
             {title: "Metaverse"},
             {title: "3D Design"},
           ].map((services, index) => (
-            <p key={index} className={cn('font-bold py-4 text-xl border-b uppercase duration-500 delay-75 opacity-30', "xs:text-2xl", "sm:text-3xl", "md:text-6xl", "hover:opacity-100 hover:px-6 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</p>
+            <p key={index} className={cn('font-bold py-4 text-2xl border-b uppercase duration-500 delay-75 opacity-30', "xs:text-[26px]", "sm:text-[33px]", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</p>
           ))}
         </div>
       </section>
@@ -109,9 +109,9 @@ const Home = ({works, arts, articles}: WorksProps) => {
           {works && works.slice(0,6).map((work, index) => (
             <Link key={index} href={`/cases/${work.slug}`}>
               <div             
-                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer opacity-30', 'duration-500 delay-75', 'hover:opacity-100 hover:px-6 hover:md:px-8 hover:xl:px-10', 'xl:py-8')}>
+                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer opacity-30', 'duration-500 delay-75', 'hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10', 'xl:py-8')}>
                 <div className={cn('space-y-1 text-left', 'xl:space-y-4')}>
-                  <p className={cn('font-extrabold text-2xl uppercase', 'xs:text-3xl', "sm:text-4xl", "md:text-7xl", 'xl:text-8xl')}>{work.title}</p>
+                  <p className={cn('font-extrabold text-3xl uppercase', 'xs:text-4xl', "sm:text-[40px]", "md:text-7xl", 'xl:text-8xl')}>{work.title}</p>
                   <p className={cn('font-light text-base', 'xs:text-lg', "md:text-2xl", 'xl:text-2xl')}>{work.category}</p>
                 </div>
                 <div className={cn('font-extrabold text-3xl', 'xl:text-7xl')}>{work.date.slice(2)}</div>

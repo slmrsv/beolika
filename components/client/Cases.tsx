@@ -13,15 +13,14 @@ interface CasesProps {
 }
 const Cases = ({cases, previousProjectSlug, nextProjectSlug}: CasesProps) => {
   return (
-    <div className={cn('font-montserrat my-44 space-y-28 text-xl w-full text-center', "md:text-left md:text-2xl", "xl:text-4xl")}>
-      <h3 className={cn('text-5xl uppercase font-black font-montserrat text-center', 'sm:text-6xl', "lg:text-5xl", "xl:text-[150px]")}>Cases</h3>
+    <div className={cn('font-montserrat my-10 space-y-28 text-xl w-full text-center', "md:text-left md:text-2xl", "xl:text-4xl")}>
       <div className={cn("border-t pt-8 space-y-14 text-left", "xl:pb-28 xl:space-y-24")}>
         <div className={cn("flex flex-col space-y-14", "md:flex-row md:justify-between md:space-y-0")}>
-          <div className={cn("space-y-2", "xl:space-y-2")}>
-            <p className={cn('text-3xl font-extrabold uppercase', 'xl:text-5xl')}>{cases?.title}</p>
+          <div className={cn("space-y-2 uppercase", "xl:space-y-2")}>
+            <p className={cn('text-3xl font-extrabold', 'xl:text-5xl')}>{cases?.title}</p>
             <p className={cn('text-2xl font-bold', 'xl:text-2xl')}>{cases?.company}</p>
           </div>
-          <div className={cn("text-right text-xl font-semibold", "xl:text-lg xl:space-y-2")}>
+          <div className={cn("text-right text-xl font-semibold uppercase", "xl:text-lg xl:space-y-2")}>
             <p>{cases?.role}</p>
             <p>{cases?.construction}</p>
             <p>{cases?.date}</p>
@@ -45,13 +44,13 @@ const Cases = ({cases, previousProjectSlug, nextProjectSlug}: CasesProps) => {
               "hidden": !previousProjectSlug?.slug
             })}>    	
             <IoIosArrowDropleft className={cn("text-2xl", "lg:text-4xl")}/>
-            <Link href={`/work/cases/${previousProjectSlug?.slug}`} className={cn("text-xs uppercase", "xs:text-xs", "md:text-lg", "xl:text-xl")}>Previous projet</Link>
+            <Link href={`/cases/${previousProjectSlug?.slug}`} className={cn("text-xs uppercase", "xs:text-sm", "md:text-lg", "xl:text-xl")}>Previous projet</Link>
           </div>
           <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer", 
             {
               "hidden": !nextProjectSlug?.slug
             })}>    	
-            <Link href={`/work/cases/${nextProjectSlug?.slug}`} className={cn("text-xs uppercase", "xs:text-xs", "md:text-lg", "xl:text-xl")}>Next project</Link>
+            <Link href={`/cases/${nextProjectSlug?.slug}`} className={cn("text-xs uppercase", "xs:text-sm", "md:text-lg", "xl:text-xl")}>Next project</Link>
             <IoIosArrowDropright className={cn("text-2xl", "lg:text-4xl")}/>
           </div>
         </div>
