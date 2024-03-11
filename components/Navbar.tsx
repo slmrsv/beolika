@@ -1,25 +1,18 @@
 "use client";
-import { TbMenu } from "react-icons/tb";
-import { IoCloseOutline } from "react-icons/io5";
-import { ThemeToggle } from './ThemeToggle';
-import { menuStore } from '@/stores';
 import { cn } from '@/lib/utils';
 import { usePathname } from "next/navigation";
-import { Button } from '@/components/ui/button';
-import Menu from './Menu';
 import Link from 'next/link';
 import { IoIosArrowDropleft } from "react-icons/io";
 import { Suspense } from "react";
 import { SkeletonNavBar } from "./skeleton/SkeletonNavBar";
-import { SiteConfig } from "@/lib/config";
 
 const Navbar = () => {
   const pathname = usePathname(); 
-  const isMenuOpen = menuStore((state) => state.isMenuOpen);
-  const setIsMenuOpen = menuStore((state) => state.setIsMenuOpen);
+  /*   const isMenuOpen = menuStore((state) => state.isMenuOpen); */
+  /* const setIsMenuOpen = menuStore((state) => state.setIsMenuOpen); */
   return (
     <Suspense fallback={<SkeletonNavBar />}>
-      <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', 
+      {/* <div className={cn('absolute top-0 z-50 w-full font-audio flex justify-between items-center', 
         {
           "justify-end": isMenuOpen && pathname === "/",
           "border-none": isMenuOpen
@@ -29,7 +22,7 @@ const Navbar = () => {
             {pathname.includes("cases") && !isMenuOpen ? (
               <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
                 <IoIosArrowDropleft className="text-2xl"/>
-                <Link href="/work" className="text-xl font-sync uppercase">Back</Link>
+                <Link href="/work" className="text-xl font-montserrat font-bold uppercase">Back</Link>
               </div>
             ) : !isMenuOpen && <Link href="/" className='text-xl'>{SiteConfig.title.default}</Link>}
             
@@ -68,7 +61,13 @@ const Navbar = () => {
             </div>
           </>)}
       </div>
-      {isMenuOpen && <Menu handleClose={setIsMenuOpen} />}
+      {isMenuOpen && <Menu handleClose={setIsMenuOpen} />} */}
+      {pathname.includes("cases") && (
+        <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
+          <IoIosArrowDropleft className="text-2xl"/>
+          <Link href="/" className="text-xl font-montserrat font-bold uppercase">Back</Link>
+        </div>
+      )}
     </Suspense>
   );
 };

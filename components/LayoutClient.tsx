@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import React, { useEffect } from 'react';
 import localFont from "next/font/local";
-import { Audiowide, Syncopate } from "next/font/google";
+import { Montserrat, Audiowide, Syncopate } from "next/font/google";
 import { menuStore } from "@/stores";
 import useLenis from '@/animations/useLenis';
 import CircleMouse from './CircleMouse';
@@ -10,6 +10,7 @@ import useMouseFollower from '@/animations/useMouseFollower';
 /* import useTextOpacityOnScroll from '@/animations/useTextOpacityOnScroll'; */
 
 const audioWide = Audiowide({ weight: ["400"], subsets: ["latin"], variable: "--font-audio" });
+const montserrat = Montserrat({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], subsets: ["latin"], variable: "--font-ms" });
 const sync = Syncopate({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-sync" });
 const glacial = localFont({
   src: [
@@ -53,7 +54,8 @@ const LayoutClient = ({
         'lg:px-20',
         glacial.variable,
         audioWide.variable,
-        sync.variable
+        sync.variable,
+        montserrat.variable
       )}>
         <CircleMouse />
         {children}

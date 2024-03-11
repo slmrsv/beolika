@@ -19,9 +19,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        glacial: ["var(--font-glacial)"],
         audio: ["var(--font-audio)"],
-        sync: ["var(--font-sync)"]
+        montserrat: ["var(--font-ms)"],
+        sync: ["var(--font-sync)"],
       },
       colors: {
         border: "hsl(var(--border))",
