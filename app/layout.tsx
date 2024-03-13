@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <LayoutClient>
       <Providers>
-        <div className="relative min-h-[94vh] flex flex-col">
+        <div className="min-h-[94vh] flex flex-col">
           <Navbar />
           <div className="flex-1">{children}</div>
         </div>

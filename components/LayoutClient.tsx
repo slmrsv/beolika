@@ -49,7 +49,7 @@ const LayoutClient = ({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={cn(
-        'min-w-screen bg-background font-sans antialiased py-6 px-5',
+        'min-w-screen relative bg-background font-sans antialiased py-6 px-5',
         'md:px-10', 
         'lg:px-20',
         glacial.variable,

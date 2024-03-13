@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Work, Art, Article } from '@/types/types';
 import Image from "next/image";
 import ArticleCard from "../ArticleCard";
+import { IoIosArrowDropright } from "react-icons/io";
 
 interface WorksProps {
   works: Work[] | null;
@@ -58,6 +59,22 @@ const Home = ({works, arts, articles}: WorksProps) => {
     sections.forEach((section) => observer.observe(section));
   
   });
+
+  useGSAP(() => {
+    /* let currentSroll = 0;
+    let isScrollingDown = true;
+    let arrows = document.querySelectorAll(".arrow"); */
+    gsap.to(".marquee__part", {
+      xPercent: -100,
+      repeat: -1,
+      duration: 5,
+      ease: "linear"
+    }).totalProgress(0.5);
+
+    gsap.set(".marquee__inner", {
+      xPercent: -50
+    });
+  });
   
   useEffect(() => {
     const handleResize = () => {
@@ -84,27 +101,73 @@ const Home = ({works, arts, articles}: WorksProps) => {
           <p className={cn("hidden", "xl:block")}>©2024. All Rights Reserved</p>
         </div>
         <div className={cn("font-black uppercase text-4xl leading-10 w-full h-full flex items-end justify-end", "xs:leading-9 xs:text-5xl", "md:text-6xl", "lg:text-5xl", "xl:text-7xl")}>
-          <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1400px] xl:indent-10")}>A creative developer who creates <span className="opacity-30">engaging & memorable</span> digital solutions.</p>
+          <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1400px] xl:indent-10")}>A developer who creates <span className="opacity-30">engaging & memorable</span> digital solutions.</p>
         </div>
       </section>
-      <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Services</h3>
-        <div className={cn('py-6', 'xl:py-8')}>
+      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+        {/* <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Services</h3> */}
+        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
           {[
-            {title: "Web Development"},
-            {title: "Interior Design"},
-            {title: "Metaverse"},
-            {title: "3D Design"},
-          ].map((services, index) => (
-            <p key={index} className={cn('font-bold py-4 text-2xl border-b uppercase duration-500 delay-75 opacity-30', "xs:text-[26px]", "sm:text-[33px]", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</p>
+            {title: "services"},
+            {title: "services"},
+            {title: "services"},
+            {title: "services"},
+            {title: "services"},
+            {title: "services"},
+          ].map((service, index) => (
+            <div key={index} className="marquee__inner">
+              <div className="marquee__part flex items-center gap-10">
+                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
+                <IoIosArrowDropright className="text-7xl arrow" />
+              </div>
+            </div>
           ))}
         </div>
+        <div className={cn('py-6 space-y-6', 'xl:py-8')}>
+          <p className="font-montserrat uppercase">Websites</p>
+          <ul>
+            {[
+              {title: "Application"},
+              {title: "E-commerce"},
+              {title: "Landing Page"},
+              {title: "Saas"},
+            ].map((services, index) => (
+              <li key={index} className={cn('font-black text-3xl uppercase duration-500 delay-75 opacity-30', "xs:text-4xl", "sm:text-[40px]", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
+            ))}
+          </ul>
+          <p className="font-montserrat uppercase">Design</p>
+          <ul>
+            {[
+              {title: "3D Design"},
+              {title: "Web Design"},
+              {title: "Metaverse"},
+            ].map((services, index) => (
+              <li key={index} className={cn('font-black text-3xl uppercase duration-500 delay-75 opacity-30', "xs:text-4xl", "sm:text-[40px]", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
+            ))}
+          </ul>
+        </div>
       </section>
-      <div className={cn("text-3xl font-black uppercase leading-10", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
+      <div className={cn("text-3xl font-black h-screen grid content-center uppercase leading-10", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
         <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Digital Nomad <span className="opacity-30">with 5 years experience </span>working remotely.</p>
       </div>
-      <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Featured<br />Projects</h3>
+      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+          {[
+            {title: "Projects"},
+            {title: "Projects"},
+            {title: "Projects"},
+            {title: "Projects"},
+            {title: "Projects"},
+            {title: "Projects"},
+          ].map((service, index) => (
+            <div key={index} className="marquee__inner">
+              <div className="marquee__part flex items-center gap-10">
+                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
+                <IoIosArrowDropright className="text-7xl arrow" />
+              </div>
+            </div>
+          ))}
+        </div>
         <div>
           {works && works.slice(0,6).map((work, index) => (
             <Link key={index} href={`/cases/${work.slug}`}>
@@ -120,11 +183,27 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl leading-10 font-black uppercase flex justify-end", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
-        <p className={cn("text-right indent-2", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I like to create 3D spaces that inspire me.</p>
+      <div className={cn("text-3xl leading-10 font-black h-screen grid content-center uppercase justify-end", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
+        <p className={cn("text-right indent-2", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
       </div>
-      <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Play<br className="xl:hidden" />Ground</h3>
+      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+          {[
+            {title: "Playground"},
+            {title: "Playground"},
+            {title: "Playground"},
+            {title: "Playground"},
+            {title: "Playground"},
+            {title: "Playground"},
+          ].map((service, index) => (
+            <div key={index} className="marquee__inner">
+              <div className="marquee__part flex items-center gap-10">
+                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
+                <IoIosArrowDropright className="text-7xl arrow" />
+              </div>
+            </div>
+          ))}
+        </div>
         <div className={cn("space-y-8", "xl:grid xl:grid-cols-3 xl:gap-6 xl:space-y-0")}>
           {arts?.slice(0,3).map((art, index) => (
             <div key={index} className={cn("space-y-4")}>
@@ -134,11 +213,27 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl font-black uppercase leading-10", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
+      <div className={cn("text-3xl font-black h-screen grid content-center uppercase leading-10", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
         <p>Apart from projects, I write web content <span className="opacity-30"> on development & psychology </span>for the Medium platform.</p>
       </div>
-      <section className={cn("space-y-10 py-20", "xl:space-y-20")}>
-        <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Latest<br />News</h3>
+      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+          {[
+            {title: "News"},
+            {title: "News"},
+            {title: "News"},
+            {title: "News"},
+            {title: "News"},
+            {title: "News"},
+          ].map((service, index) => (
+            <div key={index} className="marquee__inner">
+              <div className="marquee__part flex items-center gap-10">
+                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
+                <IoIosArrowDropright className="text-7xl arrow" />
+              </div>
+            </div>
+          ))}
+        </div>
         <div className={cn("space-y-8", "md:grid md:grid-cols-2 md:space-y-0 md:gap-6", "xl:grid xl:grid-cols-3")}>
           {articles?.slice(0,3).map((article, index) => (
             <div key={index}>
@@ -147,11 +242,27 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <section className={cn("space-y-10 pt-20 pb-10", "md:text-left","xl:space-y-20")}>
-        <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Inquiries</h3>
+      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+          {[
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+          ].map((service, index) => (
+            <div key={index} className="marquee__inner">
+              <div className="marquee__part flex items-center gap-10">
+                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
+                <IoIosArrowDropright className="text-7xl arrow" />
+              </div>
+            </div>
+          ))}
+        </div>
         <div className={cn("space-y-10", "md:space-y-20")}>
           <div>
-            <p className={cn('font-bold uppercase mx-auto pb-10 text-3xl', "md:mx-0 md:text-4xl", "xl:text-6xl xl:w-[1400px]")}>
+            <p className={cn('font-black uppercase mx-auto pb-10 text-3xl', "md:mx-0 md:text-4xl", "xl:text-6xl xl:w-[1400px]")}>
               <span className="opacity-30">Do you</span> have a project in mind?
               <br/>
               <span className="opacity-30">Send me a message on</span> my e-mail:
