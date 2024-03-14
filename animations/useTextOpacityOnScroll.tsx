@@ -22,8 +22,8 @@ import { gsap } from "gsap/dist/gsap";
 const useTextOpacityOnScroll = (
   classNameSelector: string,
   {
-    start = 'top 80%',
-    end = 'bottom 90%',
+    start = 'top 60%',
+    end = 'bottom 40%',
     opacity = 0.2,
     stagger = 0.1,
   } = {}

@@ -126,7 +126,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
           <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1400px] xl:indent-10")}>A developer who creates <span className="opacity-30">engaging & memorable</span> digital solutions.</p>
         </div>
       </section>
-      <section className={cn("space-y-52 py-20", "xl:space-y-80")}>
+      <section className={cn("space-y-44 py-20", "xl:space-y-80")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "services"},
@@ -171,10 +171,10 @@ const Home = ({works, arts, articles}: WorksProps) => {
           </ul>
         </div>
       </section>
-      <div className={cn("text-3xl font-black h-screen grid content-center uppercase leading-10 textScroll", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
+      <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
         <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Digital Nomad <span className="opacity-30">with 5 years experience </span>working remotely.</p>
       </div>
-      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Projects"},
@@ -211,10 +211,10 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl leading-10 font-black h-screen grid content-center uppercase justify-end textScroll", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
+      <div className={cn("text-3xl leading-10 font-black uppercase justify-end textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
         <p className={cn("text-right", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
       </div>
-      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Playground"},
@@ -245,12 +245,12 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl font-black h-screen grid place-content-center uppercase leading-10 textScroll", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1500px]")}>
+      <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1500px]")}>
         <p>
           Apart from projects, I write web content <span className="opacity-30 inline">on development & psychology</span> for the Medium platform.
         </p>
       </div>
-      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "News"},
@@ -280,7 +280,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
+      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Inquiries"},
