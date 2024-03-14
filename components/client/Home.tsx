@@ -152,7 +152,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
       <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
         <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-30">with 5 years experience </span>working remotely.</p>
       </div>
-      <div className={cn('py-6 space-y-6', 'xl:py-8')}>
+      <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-14')}>
         <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
         <ul>
           {[
@@ -161,6 +161,28 @@ const Home = ({works, arts, articles}: WorksProps) => {
             {title: "3D Design"},
           ].map((services, index) => (
             <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</li>
+          ))}
+        </ul>
+        <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Skills</p>
+        <ul className="flex gap-4 flex-wrap">
+          {[
+            {title: "NextJs"},
+            {title: "Typescript"},
+            {title: "Tailwindcss"},
+            {title: "ShadncUi"},
+            {title: "Zod"},
+            {title: "Next Auth"},
+            {title: "React-Hook-Form"},
+            {title: "ThreeJs"},
+            {title: "R3F"},
+            {title: "Prisma"},
+            {title: "Strapi"},
+            {title: "Gsap"},
+            {title: "Lenis"},
+            {title: "Figma"},
+            {title: "Blender"},
+          ].map((services, index) => (
+            <li key={index} className={cn('font-black text-lg uppercase duration-500 delay-75 opacity-30 rounded-2xl border px-4 py-2', "sm:text-xl", "md:text-2xl", "hover:opacity-100 hover:px-6 hover:xl:px-10", 'xl:px-6 xl:py-4 xl:text-4xl')}>{services.title}</li>
           ))}
         </ul>
       </div>
@@ -201,7 +223,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl leading-10 font-black uppercase justify-end textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
+      <div className={cn("text-3xl leading-10 font-black uppercase grid justify-end textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
         <p className={cn("text-right", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
       </div>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
