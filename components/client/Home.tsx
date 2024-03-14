@@ -129,16 +129,16 @@ const Home = ({works, arts, articles}: WorksProps) => {
       <section className={cn("space-y-44 py-20", "xl:space-y-80")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
-            {title: "services"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
+            {title: "About"},
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
@@ -148,45 +148,35 @@ const Home = ({works, arts, articles}: WorksProps) => {
             </div>
           ))}
         </div>
-        <div className={cn('py-6 space-y-6', 'xl:py-8')}>
-          <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Websites</p>
-          <ul>
-            {[
-              {title: "Application"},
-              {title: "Ecommerce"},
-              {title: "Landing Page"},
-              {title: "Saas"},
-            ].map((services, index) => (
-              <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
-            ))}
-          </ul>
-          <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Design</p>
-          <ul>
-            {[
-              {title: "3D Design"},
-              {title: "Metaverse"},
-            ].map((services, index) => (
-              <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
-            ))}
-          </ul>
-        </div>
       </section>
       <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
-        <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Digital Nomad <span className="opacity-30">with 5 years experience </span>working remotely.</p>
+        <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-30">with 5 years experience </span>working remotely.</p>
+      </div>
+      <div className={cn('py-6 space-y-6', 'xl:py-8')}>
+        <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
+        <ul>
+          {[
+            {title: "Web Development"},
+            {title: "Ecommerce"},
+            {title: "3D Design"},
+          ].map((services, index) => (
+            <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</li>
+          ))}
+        </ul>
       </div>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
-            {title: "Projects"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
+            {title: "Works"},
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
@@ -247,7 +237,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
       </section>
       <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1500px]")}>
         <p>
-          Apart from projects, I write web content <span className="opacity-30 inline">on development & psychology</span> for the Medium platform.
+          Apart from projects, I write web content <span className="opacity-30">on development & psychology</span> for the Medium platform.
         </p>
       </div>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
