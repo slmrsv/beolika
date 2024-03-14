@@ -7,7 +7,6 @@ import { menuStore } from "@/stores";
 import useLenis from '@/animations/useLenis';
 import CircleMouse from './CircleMouse';
 import useMouseFollower from '@/animations/useMouseFollower';
-/* import useTextOpacityOnScroll from '@/animations/useTextOpacityOnScroll'; */
 
 const audioWide = Audiowide({ weight: ["400"], subsets: ["latin"], variable: "--font-audio" });
 const montserrat = Montserrat({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], subsets: ["latin"], variable: "--font-ms" });
@@ -31,7 +30,6 @@ const LayoutClient = ({
     isTextScrollingEnabledY: true,
   });
   useLenis();
-  /* useTextOpacityOnScroll(".opacityAnime"); */
 
   useEffect(() => {
     if (isMenuOpen) {

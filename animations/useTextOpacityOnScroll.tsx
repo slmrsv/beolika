@@ -22,7 +22,7 @@ import { gsap } from "gsap/dist/gsap";
 const useTextOpacityOnScroll = (
   classNameSelector: string,
   {
-    start = 'top 20%',
+    start = 'top 80%',
     end = 'bottom 90%',
     opacity = 0.2,
     stagger = 0.1,
@@ -39,7 +39,7 @@ const useTextOpacityOnScroll = (
     }
 
     SplitTypes.forEach((char: any) => {
-      const text = new SplitType(char, { types: 'chars' });
+      const text = new SplitType(char, { types: 'lines,words,chars' });
       gsap.from(text.chars, {
         scrollTrigger: {
           trigger: char,

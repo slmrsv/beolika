@@ -11,7 +11,8 @@ import Link from "next/link";
 import { Work, Art, Article } from '@/types/types';
 import Image from "next/image";
 import ArticleCard from "../ArticleCard";
-import { IoIosArrowDropright } from "react-icons/io";
+import { GoArrowDownRight } from "react-icons/go";
+import useTextOpacityOnScroll from "@/animations/useTextOpacityOnScroll";
 
 interface WorksProps {
   works: Work[] | null;
@@ -22,6 +23,7 @@ interface WorksProps {
 const Home = ({works, arts, articles}: WorksProps) => {
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+  useTextOpacityOnScroll(".textScroll");
   
   
   useGSAP(() => {
@@ -61,18 +63,38 @@ const Home = ({works, arts, articles}: WorksProps) => {
   });
 
   useGSAP(() => {
-    /* let currentSroll = 0;
+    let currentSroll = 0;
     let isScrollingDown = true;
-    let arrows = document.querySelectorAll(".arrow"); */
-    gsap.to(".marquee__part", {
+    let arrows = document.querySelectorAll(".arrow");
+    let tween = gsap.to(".marquee__part", {
       xPercent: -100,
       repeat: -1,
-      duration: 5,
+      duration: 10,
       ease: "linear"
     }).totalProgress(0.5);
 
-    gsap.set(".marquee__inner", {
-      xPercent: -50
+    gsap.set(".marquee__inner", { xPercent: -50 });
+
+    window.addEventListener("scroll", function() {
+      if(this.window.scrollY > currentSroll) {
+        isScrollingDown = true;
+      } else {
+        isScrollingDown = false;
+      }
+
+      gsap.to(tween, {
+        timeScale: isScrollingDown ? 1 : -1,
+      });
+      
+      arrows.forEach((arrow) => {
+        if(isScrollingDown) {
+          arrow.classList.remove("active");
+        } else {
+          arrow.classList.add("active");
+        }
+      });
+      
+      currentSroll = window.scrollY;
     });
   });
   
@@ -94,7 +116,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
   return (
     <div ref={ref} className={cn("font-montserrat space-y-20", "md:space-y-44")}>
       <section className={cn('h-[85vh] flex flex-col justify-center items-center mb-2', "xl:-mt-8 xl:h-[93vh]")}>
-        <h1 className={cn("font-black uppercase text-center leading-[90%] border-b", "xl:mt-5")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
+        <h1 className={cn("font-black uppercase text-center leading-[90%] border-b", "xl:mt-20")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
         <div className={cn("flex justify-between mt-1 w-full uppercase text-[10px] font-extralight", "xs:text-xs", "sm:text-xs", "md:text-xl", "xl:text-xl xl:mt-2")}>
           <p>Available WorldWide</p>
           <p>Creative Developer</p>
@@ -104,10 +126,13 @@ const Home = ({works, arts, articles}: WorksProps) => {
           <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1400px] xl:indent-10")}>A developer who creates <span className="opacity-30">engaging & memorable</span> digital solutions.</p>
         </div>
       </section>
-      <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
-        {/* <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[150px]")}>Services</h3> */}
-        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+      <section className={cn("space-y-52 py-20", "xl:space-y-80")}>
+        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
+            {title: "services"},
+            {title: "services"},
+            {title: "services"},
+            {title: "services"},
             {title: "services"},
             {title: "services"},
             {title: "services"},
@@ -117,42 +142,45 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
-                <IoIosArrowDropright className="text-7xl arrow" />
+                <h3 className={cn('uppercase font-black text-3xl', 'sm:text-4xl', "md:text-5xl", "lg:text-6xl", "xl:text-7xl")}>{service.title}</h3>
+                <GoArrowDownRight className={cn("text-5xl arrow", "sm:text-6xl", "xl:text-9xl")} />
               </div>
             </div>
           ))}
         </div>
         <div className={cn('py-6 space-y-6', 'xl:py-8')}>
-          <p className="font-montserrat uppercase">Websites</p>
+          <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Websites</p>
           <ul>
             {[
               {title: "Application"},
-              {title: "E-commerce"},
+              {title: "Ecommerce"},
               {title: "Landing Page"},
               {title: "Saas"},
             ].map((services, index) => (
-              <li key={index} className={cn('font-black text-3xl uppercase duration-500 delay-75 opacity-30', "xs:text-4xl", "sm:text-[40px]", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
+              <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
             ))}
           </ul>
-          <p className="font-montserrat uppercase">Design</p>
+          <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Design</p>
           <ul>
             {[
               {title: "3D Design"},
-              {title: "Web Design"},
               {title: "Metaverse"},
             ].map((services, index) => (
-              <li key={index} className={cn('font-black text-3xl uppercase duration-500 delay-75 opacity-30', "xs:text-4xl", "sm:text-[40px]", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
+              <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
             ))}
           </ul>
         </div>
       </section>
-      <div className={cn("text-3xl font-black h-screen grid content-center uppercase leading-10", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
+      <div className={cn("text-3xl font-black h-screen grid content-center uppercase leading-10 textScroll", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
         <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Digital Nomad <span className="opacity-30">with 5 years experience </span>working remotely.</p>
       </div>
       <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
-        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
+            {title: "Projects"},
+            {title: "Projects"},
+            {title: "Projects"},
+            {title: "Projects"},
             {title: "Projects"},
             {title: "Projects"},
             {title: "Projects"},
@@ -162,8 +190,8 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
-                <IoIosArrowDropright className="text-7xl arrow" />
+                <h3 className={cn('uppercase font-black text-3xl', 'sm:text-4xl', "md:text-5xl", "lg:text-6xl", "xl:text-7xl")}>{service.title}</h3>
+                <GoArrowDownRight className={cn("text-5xl arrow", "sm:text-6xl", "xl:text-9xl")} />
               </div>
             </div>
           ))}
@@ -183,12 +211,16 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl leading-10 font-black h-screen grid content-center uppercase justify-end", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
-        <p className={cn("text-right indent-2", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
+      <div className={cn("text-3xl leading-10 font-black h-screen grid content-center uppercase justify-end textScroll", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
+        <p className={cn("text-right", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
       </div>
       <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
-        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
+            {title: "Playground"},
+            {title: "Playground"},
+            {title: "Playground"},
+            {title: "Playground"},
             {title: "Playground"},
             {title: "Playground"},
             {title: "Playground"},
@@ -198,8 +230,8 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
-                <IoIosArrowDropright className="text-7xl arrow" />
+                <h3 className={cn('uppercase font-black text-3xl', 'sm:text-4xl', "md:text-5xl", "lg:text-6xl", "xl:text-7xl")}>{service.title}</h3>
+                <GoArrowDownRight className={cn("text-5xl arrow", "sm:text-6xl", "xl:text-9xl")} />
               </div>
             </div>
           ))}
@@ -213,12 +245,18 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl font-black h-screen grid content-center uppercase leading-10", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
-        <p>Apart from projects, I write web content <span className="opacity-30"> on development & psychology </span>for the Medium platform.</p>
+      <div className={cn("text-3xl font-black h-screen grid place-content-center uppercase leading-10 textScroll", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1500px]")}>
+        <p>
+          Apart from projects, I write web content <span className="opacity-30 inline">on development & psychology</span> for the Medium platform.
+        </p>
       </div>
       <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
-        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
+            {title: "News"},
+            {title: "News"},
+            {title: "News"},
+            {title: "News"},
             {title: "News"},
             {title: "News"},
             {title: "News"},
@@ -228,8 +266,8 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
-                <IoIosArrowDropright className="text-7xl arrow" />
+                <h3 className={cn('uppercase font-black text-3xl', 'sm:text-4xl', "md:text-5xl", "lg:text-6xl", "xl:text-7xl")}>{service.title}</h3>
+                <GoArrowDownRight className={cn("text-5xl arrow", "sm:text-6xl", "xl:text-9xl")} />
               </div>
             </div>
           ))}
@@ -243,8 +281,12 @@ const Home = ({works, arts, articles}: WorksProps) => {
         </div>
       </section>
       <section className={cn("space-y-52 py-20", "xl:space-y-96")}>
-        <div className="marquee absolute left-0 right-0 text-white flex pt-14 uppercase overflow-hidden border-t gap-10">
+        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+            {title: "Inquiries"},
+            {title: "Inquiries"},
             {title: "Inquiries"},
             {title: "Inquiries"},
             {title: "Inquiries"},
@@ -254,8 +296,8 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ].map((service, index) => (
             <div key={index} className="marquee__inner">
               <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-5xl', 'sm:text-6xl', "md:text-7xl", "lg:text-7xl", "xl:text-[200px]")}>{service.title}</h3>
-                <IoIosArrowDropright className="text-7xl arrow" />
+                <h3 className={cn('uppercase font-black text-3xl', 'sm:text-4xl', "md:text-5xl", "lg:text-6xl", "xl:text-7xl")}>{service.title}</h3>
+                <GoArrowDownRight className={cn("text-5xl arrow", "sm:text-6xl", "xl:text-9xl")} />
               </div>
             </div>
           ))}
