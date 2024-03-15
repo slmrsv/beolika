@@ -165,29 +165,38 @@ const Home = ({works, arts, articles}: WorksProps) => {
             {title: "Ecommerce"},
             {title: "3D Design"},
           ].map((services, index) => (
-            <li key={index} className={cn('w-full font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</li>
+            <li key={index} className={cn('w-full font-black text-4xl uppercase duration-500 delay-75 opacity-30', "xs:text-[40px]", "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
           ))}
         </ul>
         <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Skills</p>
         <ul className={cn("flex gap-2 flex-wrap", "md:gap-4")}>
           {[
+            {title: "R3F"},
+            {title: "ThreeJs"},
             {title: "NextJs"},
+            {title: "ReactJs"},
             {title: "Typescript"},
+            {title: "MaterialUI"},
+            {title: "Styled-Component"},
             {title: "Tailwindcss"},
+            {title: "TwMerge"},
+            {title: "Clsx"},
             {title: "ShadncUi"},
             {title: "Zod"},
+            {title: "Yup"},
+            {title: "RxJs"},
             {title: "Next Auth"},
             {title: "React-Hook-Form"},
-            {title: "ThreeJs"},
-            {title: "R3F"},
             {title: "Prisma"},
             {title: "Strapi"},
+            {title: "Zustand"},
+            {title: "Akita"},
+            {title: "Elf"},
             {title: "Gsap"},
-            {title: "Lenis"},
             {title: "Figma"},
             {title: "Blender"},
           ].map((services, index) => (
-            <li key={index} className={cn('font-black text-lg uppercase duration-500 delay-75 opacity-30 rounded-2xl border px-4 py-2', "sm:text-xl", "md:text-2xl", "hover:opacity-100 hover:px-6 hover:xl:px-10", 'xl:px-6 xl:py-4 xl:text-4xl')}>{services.title}</li>
+            <li key={index} className={cn('font-black text-lg uppercase duration-500 delay-75 rounded-2xl border px-4 py-2', "sm:text-xl", "md:text-2xl", "hover:px-6 hover:xl:px-10", 'xl:px-6 xl:py-4 xl:text-4xl')}>{services.title}</li>
           ))}
         </ul>
       </div>
@@ -217,7 +226,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
           {works && works.slice(0,6).map((work, index) => (
             <Link key={index} href={`/cases/${work.slug}`}>
               <div             
-                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer opacity-30', 'duration-500 delay-75', 'hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10', 'xl:py-8')}>
+                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10', 'xl:py-8')}>
                 <div className={cn('space-y-1 text-left', 'xl:space-y-4')}>
                   <p className={cn('font-extrabold text-3xl uppercase', 'xs:text-4xl', "sm:text-[40px]", "md:text-7xl", 'xl:text-8xl')}>{work.title}</p>
                   <p className={cn('font-light text-base', 'xs:text-lg', "md:text-2xl", 'xl:text-2xl')}>{work.category}</p>
