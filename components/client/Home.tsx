@@ -13,6 +13,11 @@ import Image from "next/image";
 import ArticleCard from "../ArticleCard";
 import { GoArrowDownRight } from "react-icons/go";
 import useTextOpacityOnScroll from "@/animations/useTextOpacityOnScroll";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 interface WorksProps {
   works: Work[] | null;
@@ -116,18 +121,18 @@ const Home = ({works, arts, articles}: WorksProps) => {
   return (
     <div ref={ref} className={cn("font-montserrat space-y-20", "md:space-y-44")}>
       <section className={cn('h-[85vh] flex flex-col justify-center items-center mb-2', "xl:-mt-8 xl:h-[93vh]")}>
-        <h1 className={cn("font-black uppercase text-center leading-[90%] border-b", "xl:mt-20")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
+        <h1 className={cn("font-black uppercase text-center leading-[90%] border-b", "xl:mt-5")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
         <div className={cn("flex justify-between mt-1 w-full uppercase text-[10px] font-extralight", "xs:text-xs", "sm:text-xs", "md:text-xl", "xl:text-xl xl:mt-2")}>
           <p>Available WorldWide</p>
           <p>Creative Developer</p>
           <p className={cn("hidden", "xl:block")}>©2024. All Rights Reserved</p>
         </div>
-        <div className={cn("font-black uppercase text-4xl leading-10 w-full h-full flex items-end justify-end", "xs:leading-9 xs:text-5xl", "md:text-6xl", "lg:text-5xl", "xl:text-7xl")}>
+        <div className={cn("font-black uppercase text-3xl leading-10 w-full h-full flex items-end justify-end", "xs:leading-9 xs:text-4xl", "md:text-5xl", "lg:text-6xl", "xl:text-7xl")}>
           <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1400px] xl:indent-10")}>A developer who creates <span className="opacity-30">engaging & memorable</span> digital solutions.</p>
         </div>
       </section>
       <section className={cn("space-y-44 py-20", "xl:space-y-80")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
+        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "About"},
             {title: "About"},
@@ -160,11 +165,11 @@ const Home = ({works, arts, articles}: WorksProps) => {
             {title: "Ecommerce"},
             {title: "3D Design"},
           ].map((services, index) => (
-            <li key={index} className={cn('font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</li>
+            <li key={index} className={cn('w-full font-black text-4xl uppercase duration-500 delay-75 opacity-30', "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-8xl')}>{services.title}</li>
           ))}
         </ul>
         <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Skills</p>
-        <ul className="flex gap-4 flex-wrap">
+        <ul className={cn("flex gap-2 flex-wrap", "md:gap-4")}>
           {[
             {title: "NextJs"},
             {title: "Typescript"},
@@ -187,7 +192,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         </ul>
       </div>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
+        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Works"},
             {title: "Works"},
@@ -227,7 +232,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         <p className={cn("text-right", "xl:w-[1400px]")}><span className="opacity-30">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
       </div>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
+        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Playground"},
             {title: "Playground"},
@@ -248,14 +253,21 @@ const Home = ({works, arts, articles}: WorksProps) => {
             </div>
           ))}
         </div>
-        <div className={cn("space-y-8", "xl:grid xl:grid-cols-3 xl:gap-6 xl:space-y-0")}>
-          {arts?.slice(0,3).map((art, index) => (
-            <div key={index} className={cn("space-y-4")}>
-              <Image src={art.image} alt={art.alt} width={1080} height={1920} className={cn("w-full bg-gray-300 rounded-3xl")} />
-              <p className={cn("text-lg font-ms", "xs:text-xl", "md:text-3xl", "xl:text-3xl")}>{art.title}</p> 
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {arts?.map((art, index) => (
+              <CarouselItem className="lg:basis-1/3" key={index}>
+                <Image src={art.image} alt={art.alt} width={1080} height={1920} className={cn("w-full bg-gray-300 rounded-3xl")} />
+                <p className={cn("text-lg font-ms", "xs:text-xl", "md:text-3xl", "xl:text-3xl")}>{art.title}</p> 
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </section>
       <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1500px]")}>
         <p>
@@ -263,7 +275,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
         </p>
       </div>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
+        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "News"},
             {title: "News"},
@@ -284,16 +296,23 @@ const Home = ({works, arts, articles}: WorksProps) => {
             </div>
           ))}
         </div>
-        <div className={cn("space-y-8", "md:grid md:grid-cols-2 md:space-y-0 md:gap-6", "xl:grid xl:grid-cols-3")}>
-          {articles?.slice(0,3).map((article, index) => (
-            <div key={index}>
-              <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} link={article.link} />
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {articles?.map((article, index) => (
+              <CarouselItem className="lg:basis-1/3" key={index}>
+                <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} link={article.link} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </section>
       <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-y py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
+        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Inquiries"},
             {title: "Inquiries"},
