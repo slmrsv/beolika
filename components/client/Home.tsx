@@ -2,11 +2,6 @@
 import React, { useEffect, useState, useRef } from "react";
 /* import { FaGithub, FaInstagram, FaDiscord, FaFacebook  } from "react-icons/fa"; */
 import { cn } from '@/lib/utils';
-import { useGSAP } from "@gsap/react";
-// eslint-disable-next-line import/no-named-as-default
-import gsap from 'gsap';
-import SplitType from 'split-type';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from "next/link";
 import { Work, Art, Article } from '@/types/types';
 import Image from "next/image";
@@ -18,6 +13,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import useMarqueeTextScroll from "@/animations/useMarqueeTextScroll";
 
 interface WorksProps {
   works: Work[] | null;
@@ -28,80 +24,8 @@ interface WorksProps {
 const Home = ({works, arts, articles}: WorksProps) => {
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  useTextOpacityOnScroll(".textScroll");
-  
-  
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const sections = document.querySelectorAll('section');
-  
-    const handleIntersection = (entries: any) => {
-      entries.map((entry: any) => {
-        const text = entry.target.querySelectorAll('div p.quote');
-        const tl = gsap.timeline({delay: 0});
-      
-        text.forEach((char: any) => {
-          const splitType = new SplitType(char);
-          tl
-            .to(splitType.chars, {
-              y: 0,
-              stagger: 0.005,
-              delay: -.5,
-              duration: 1,
-            });
-        });
-  
-        if (entry.isIntersecting) {
-          tl.play();
-        } else {
-          tl.reverse(0);
-        }
-      });
-    };
-  
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5,
-    });
-  
-    sections.forEach((section) => observer.observe(section));
-  
-  });
-
-  useGSAP(() => {
-    let currentSroll = 0;
-    let isScrollingDown = true;
-    let arrows = document.querySelectorAll(".arrow");
-    let tween = gsap.to(".marquee__part", {
-      xPercent: -100,
-      repeat: -1,
-      duration: 10,
-      ease: "linear"
-    }).totalProgress(0.5);
-
-    gsap.set(".marquee__inner", { xPercent: -50 });
-
-    window.addEventListener("scroll", function() {
-      if(this.window.scrollY > currentSroll) {
-        isScrollingDown = true;
-      } else {
-        isScrollingDown = false;
-      }
-
-      gsap.to(tween, {
-        timeScale: isScrollingDown ? 1 : -1,
-      });
-      
-      arrows.forEach((arrow) => {
-        if(isScrollingDown) {
-          arrow.classList.remove("active");
-        } else {
-          arrow.classList.add("active");
-        }
-      });
-      
-      currentSroll = window.scrollY;
-    });
-  });
+  useTextOpacityOnScroll(".textScroll", ".textOpacity");
+  useMarqueeTextScroll();
   
   useEffect(() => {
     const handleResize = () => {
@@ -154,27 +78,28 @@ const Home = ({works, arts, articles}: WorksProps) => {
           ))}
         </div>
       </section>
-      <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1400px]")}>
-        <p>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-30">with 5 years experience </span>working remotely.</p>
+      <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
+        <p className={cn("xl:w-[1400px]")}>Beolika is my artistic name, <span className="opacity-30">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-30">from French Riviera with 5 years experience </span>working remotely.</p>
       </div>
       <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-14')}>
         <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
-        <ul>
+        <ul className="textOpacity">
           {[
             {title: "Web Development"},
             {title: "Ecommerce"},
             {title: "3D Design"},
           ].map((services, index) => (
-            <li key={index} className={cn('w-full font-black text-4xl uppercase duration-500 delay-75 opacity-30', "xs:text-[40px]", "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
+            <li key={index} className={cn('w-full font-black text-4xl uppercase duration-500 delay-75 text-white/30', "xs:text-[40px]", "sm:text-5xl", "md:text-6xl", "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-9xl')}>{services.title}</li>
           ))}
         </ul>
         <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Skills</p>
-        <ul className={cn("flex gap-2 flex-wrap", "md:gap-4")}>
+        <ul className={cn("flex gap-2 flex-wrap textOpacity", "md:gap-4")}>
           {[
             {title: "R3F"},
             {title: "ThreeJs"},
             {title: "NextJs"},
             {title: "ReactJs"},
+            {title: "NodeJs"},
             {title: "Typescript"},
             {title: "MaterialUI"},
             {title: "Styled-Component"},
@@ -190,7 +115,7 @@ const Home = ({works, arts, articles}: WorksProps) => {
             {title: "Figma"},
             {title: "Blender"},
           ].map((services, index) => (
-            <li key={index} className={cn('font-black text-lg uppercase duration-500 delay-75 rounded-2xl opacity-30 border px-4 py-2', "sm:text-xl", "md:text-2xl", "hover:px-6 hover:xl:px-10 hover:opacity-100", 'xl:px-6 xl:py-4 xl:text-4xl')}>{services.title}</li>
+            <li key={index} className={cn('font-black text-lg uppercase duration-500 delay-75 rounded-2xl text-white/30 border px-4 py-2', "sm:text-xl", "md:text-2xl", "hover:px-6 hover:xl:px-10 hover:text-white/100 hover:opacity-100", 'xl:px-6 xl:py-4 xl:text-4xl')}>{services.title}</li>
           ))}
         </ul>
       </div>
@@ -272,8 +197,8 @@ const Home = ({works, arts, articles}: WorksProps) => {
           </CarouselContent>
         </Carousel>
       </section>
-      <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl xl:w-[1500px]")}>
-        <p>
+      <div className={cn("text-3xl font-black uppercase leading-10 textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
+        <p className={cn("xl:w-[1400px]")}>
           Apart from projects, I write web content <span className="opacity-30">on development & psychology</span> for the Medium platform.
         </p>
       </div>

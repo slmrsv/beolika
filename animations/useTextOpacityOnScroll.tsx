@@ -1,7 +1,8 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import SplitType from 'split-type';
-import { gsap } from "gsap/dist/gsap";
+// eslint-disable-next-line import/no-named-as-default
+import gsap from 'gsap';
 
 /**
  * useTextOpacityOnScroll Hook
@@ -20,10 +21,11 @@ import { gsap } from "gsap/dist/gsap";
  */
 
 const useTextOpacityOnScroll = (
-  classNameSelector: string,
+  classNameSelectorChar: string,
+  classNameSelectorWords: string,
   {
-    start = 'top 60%',
-    end = 'bottom 40%',
+    start = 'top 80%',
+    end = 'bottom 60%',
     opacity = 0.2,
     stagger = 0.1,
   } = {}
@@ -31,16 +33,21 @@ const useTextOpacityOnScroll = (
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const SplitTypes = document.querySelectorAll(classNameSelector);
+    const textChars = document.querySelectorAll(classNameSelectorChar);
+    const textWords = document.querySelectorAll(classNameSelectorWords);
 
 
-    if (!SplitTypes) {
+    if (!textChars) {
       return;
     }
 
-    SplitTypes.forEach((char: any) => {
-      const text = new SplitType(char, { types: 'lines,words,chars' });
-      gsap.from(text.chars, {
+    if(!textWords) {
+      return;
+    }
+
+    textChars.forEach((char: any) => {
+      const splitChars = new SplitType(char, { types: 'lines,words,chars' });
+      gsap.from(splitChars.chars, {
         scrollTrigger: {
           trigger: char,
           start,
@@ -49,6 +56,21 @@ const useTextOpacityOnScroll = (
           markers: false,
         },
         opacity,
+        stagger,
+      });
+    });
+
+    textWords.forEach((word: any) => {
+      const splitWords = new SplitType(word, { types: 'words' });
+      gsap.to(splitWords.words, {
+        scrollTrigger: {
+          trigger: word,
+          start,
+          end,
+          scrub: true,
+          markers: false,
+        },
+        color: "white",
         stagger,
       });
     });
