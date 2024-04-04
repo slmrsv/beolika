@@ -24,7 +24,7 @@ const ArticleCard = ({
       <CardHeader className={cn("text-base font-extralight text-ms", "md:text-lg")}>
         {date}
       </CardHeader>
-      <CardContent className={cn("text-base font-normal uppercase leading-8 flex-grow", "xs:leading-9 xs:text-lg", "sm:text-xl", "lg:text-2xl lg:w-[350px]", "xl:w-[400px] xl:leading-10", "2xl:w-[450px]")}>
+      <CardContent className={cn("text-base font-light flex-grow", "xs:leading-9 xs:text-lg", "sm:text-xl", "lg:text-2xl lg:w-[350px]", "xl:w-[400px] xl:leading-8", "2xl:w-[450px]")}>
         <h6>{title}</h6>
       </CardContent>
       <CardFooter className={cn("font-ms text-base flex items-center justify-between text-primary/30", "md:text-lg")}>
