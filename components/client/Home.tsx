@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-/* import { FaGithub, FaInstagram, FaDiscord, FaFacebook  } from "react-icons/fa"; */
 import { cn } from '@/lib/utils';
 import Link from "next/link";
 import { Work, Art, Article } from '@/types/types';
@@ -13,6 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import useMarqueeTextScroll from "@/animations/useMarqueeTextScroll";
+import Torus from "../Torus";
 
 interface WorksProps {
   works: Work[] | null;
@@ -25,7 +25,7 @@ const Home = ({works, articles}: WorksProps) => {
   const ref = useRef<HTMLDivElement>(null);
   useTextOpacityOnScroll(".textScroll", ".textOpacity");
   useMarqueeTextScroll();
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (ref?.current) {
@@ -53,6 +53,9 @@ const Home = ({works, articles}: WorksProps) => {
         <div className={cn("text-3xl leading-10 w-full h-full flex items-end justify-end", "xs:leading-9", "lg:text-4xl", "xl:text-5xl xl:leading-[60px]")}>
           <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1200px] xl:indent-10")}>A developer who creates <span className="opacity-50">engaging & memorable</span> digital solutions.</p>
         </div>
+        {/*  <div className="absolute h-full w-full">
+          <Torus />
+        </div> */}
       </section>
       <section className={cn("space-y-44 py-20", "xl:space-y-80")}>
         <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
@@ -82,13 +85,13 @@ const Home = ({works, articles}: WorksProps) => {
       </div>
       <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-14')}>
         <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
-        <ul className="space-y-2">
+        <ul className="lg:space-y-4">
           {[
             {title: "Web Development"},
             {title: "Ecommerce"},
             {title: "3D Design"},
           ].map((services, index) => (
-            <li key={index} className={cn('w-full text-3xl duration-500 delay-75 text-white', "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-4xl')}>{services.title}</li>
+            <li key={index} className={cn('w-full text-2xl duration-500 delay-75 text-white', "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-5xl')}>{services.title}</li>
           ))}
         </ul>
       </div>
@@ -246,7 +249,7 @@ const Home = ({works, articles}: WorksProps) => {
           <div className="pt-10">
             <div>
               <p className={cn('mx-auto pb-5 text-xl opacity-50', "md:mx-0 md:text-4xl", "xl:text-4xl xl:w-[1400px] xl:leading-[60px]")}>
-              Follow Us
+              Follow Me
               </p>
             </div> 
             {[
