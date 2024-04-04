@@ -12,7 +12,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import useMarqueeTextScroll from "@/animations/useMarqueeTextScroll";
-import Torus from "../Torus";
 
 interface WorksProps {
   works: Work[] | null;
