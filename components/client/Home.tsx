@@ -69,14 +69,14 @@ const Home = ({works, articles}: WorksProps) => {
           <p className={cn("font-montserrat uppercase pt-8 text-xs", "lg:text-base lg:w-[900px]")}>Services</p>
           <ul className="lg:space-y-4 w-full">
             {[
-              {title: "Frontend Development", description: "From your designs in Figma or Sketch, I create pixel-perfect responsive components, responsive web interfaces for landing pages, applications, SaaS and e-commerce, connected to back-end APIs for a seamless user experience."},
-              {title: "Backend Development", description: "I provide complete application development with NextJS, including secure APIs with NextAuth, TypeScript structure and data validation with Zod, combined with Prisma and PostgreSQL for optimal performance and security."},
-              {title: "3D Design", description: "With expertise in Blender modeling and a passion for architecture, I transform concepts into memorable images, enabling effective and memorable communication. In my spare time, I like to create architectural visualization renderings."},
+              {title: "Frontend Development", description: "From designs in Figma or Sketch, I create pixel-perfect responsive components, responsive web interfaces for landing pages, applications, SaaS and e-commerce, connected to back-end APIs for a seamless user experience."},
+              {title: "Backend Development", description: "I offer complete development with NextJS, including secure APIs with NextAuth, TypeScript structure and data validation with Zod. For optimum performance and security, I integrate Prisma with Zustand for real-time state management and data manipulation."},
+              {title: "3D Design", description: "With expertise in Blender modeling and a passion for architecture, I transform concepts into memorable images, enabling effective communication."},
             ].map((services, index) => (
               <li key={index} className={cn('w-full text-2xl', 'xl:text-5xl')}>
-                <div className={cn("border-t py-6 space-y-4 duration-500 delay-75", "hover:px-2 hover:md:px-8 hover:xl:px-10", "xl:py-10")}>
+                <div className={cn("border-t py-6 space-y-4 duration-500 delay-75", "xl:py-8 xl:space-y-8")}>
                   <p>{services.title}</p>
-                  <p className={cn("text-base font-light")}>{services.description}</p>
+                  <p className={cn("text-base font-light", "xl:text-xl")}>{services.description}</p>
                 </div>
               </li>
             ))}
@@ -92,7 +92,7 @@ const Home = ({works, articles}: WorksProps) => {
           {works && works.slice(0,6).map((work, index) => (
             <Link key={index} href={`/cases/${work.slug}`} scroll>
               <div             
-                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground/30 hover:border-b-white hover:text-background', 'xl:py-8')}>
+                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground hover:border-b-white hover:text-background', 'xl:py-8')}>
                 <p className={cn('font-semibold text-xl w-full', 'xl:text-5xl')}>{work.title}</p>
                 <p className={cn('font-light text-sm w-full', 'xs:text-lg', "md:text-2xl", 'xl:text-2xl')}>{work.category}</p>
                 <div className={cn('font-semibold text-xl', 'xl:text-5xl')}>{work.date.slice(2)}</div>
@@ -199,7 +199,7 @@ const Home = ({works, articles}: WorksProps) => {
             ].map((social,index) => (
               <Link key={index} href={social.slug} target="_blank" rel="noopener noreferrer">
                 <div             
-                  className={cn('group border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:border-b-white hover:bg-foreground/30 hover:text-background', 'xl:py-8')}>
+                  className={cn('group border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:border-b-white hover:bg-foreground hover:text-background', 'xl:py-8')}>
                   <p className={cn('font-semibold text-xl w-full', 'xl:text-5xl')}>{social.title}</p>
                   <GoArrowDownRight className={cn("text-3xl group-hover:rotate-[-90deg]", "xl:text-6xl")} />
                 </div>
