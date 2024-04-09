@@ -87,7 +87,7 @@ const Home = ({works, articles}: WorksProps) => {
           {works && works.slice(0,6).map((work, index) => (
             <Link key={index} href={`/cases/${work.slug}`} scroll>
               <div             
-                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground hover:text-background', 'xl:py-8')}>
+                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground/30 hover:border-b-white hover:text-background', 'xl:py-8')}>
                 <p className={cn('font-semibold text-xl w-full', 'xl:text-5xl')}>{work.title}</p>
                 <p className={cn('font-light text-sm w-full', 'xs:text-lg', "md:text-2xl", 'xl:text-2xl')}>{work.category}</p>
                 <div className={cn('font-semibold text-xl', 'xl:text-5xl')}>{work.date.slice(2)}</div>
@@ -154,7 +154,9 @@ const Home = ({works, articles}: WorksProps) => {
           <CarouselContent>
             {articles?.map((article, index) => (
               <CarouselItem className="lg:basis-1/3" key={index}>
-                <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} link={article.link} />
+                <Link href={article.link}>
+                  <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} />
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -192,7 +194,7 @@ const Home = ({works, articles}: WorksProps) => {
             ].map((social,index) => (
               <Link key={index} href={social.slug} target="_blank" rel="noopener noreferrer">
                 <div             
-                  className={cn('group border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground hover:text-background', 'xl:py-8')}>
+                  className={cn('group border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:border-b-white hover:bg-foreground/30 hover:text-background', 'xl:py-8')}>
                   <p className={cn('font-semibold text-xl w-full', 'xl:text-5xl')}>{social.title}</p>
                   <GoArrowDownRight className={cn("text-3xl group-hover:rotate-[-90deg]", "xl:text-6xl")} />
                 </div>
