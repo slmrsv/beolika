@@ -6,7 +6,7 @@ import { PropsWithChildren } from 'react';
 export const Providers = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme="dark" /* enableSystem */>
+      <ThemeProvider attribute="class" defaultTheme="light" /* enableSystem */>
         {children}
       </ThemeProvider>
     </>

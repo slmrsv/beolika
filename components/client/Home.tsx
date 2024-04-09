@@ -12,6 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import useMarqueeTextScroll from "@/animations/useMarqueeTextScroll";
+import Copyright from "../Copyright";
 
 interface WorksProps {
   works: Work[] | null;
@@ -44,7 +45,7 @@ const Home = ({works, articles}: WorksProps) => {
     <div ref={ref} className={cn("font-montserrat space-y-20", "md:space-y-44")}>
       <section className={cn('h-[85vh] flex flex-col justify-center items-center mb-2', "xl:-mt-8 xl:h-[93vh]")}>
         <h1 className={cn("font-black uppercase text-center leading-[90%] pb-1", "xl:mt-5")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
-        <div className={cn("flex justify-between w-full uppercase border-t pt-2 text-[10px] font-extralight", "xs:text-xs", "sm:text-xs", "lg:pt-4", "xl:text-xl")}>
+        <div className={cn("flex justify-between w-full uppercase border-t pt-2 text-[10px]", "xs:text-xs", "sm:text-xs", "lg:pt-4", "xl:text-xl")}>
           <p>Available WorldWide</p>
           <p>Product Developer</p>
           <p className={cn("hidden", "xl:block")}>©2024. All Rights Reserved</p>
@@ -56,74 +57,40 @@ const Home = ({works, articles}: WorksProps) => {
           <Torus />
         </div> */}
       </section>
-      <section className={cn("space-y-44 py-20", "xl:space-y-80")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
-          {[
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-            {title: "About"},
-          ].map((service, index) => (
-            <div key={index} className="marquee__inner">
-              <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-3xl', "lg:text-4xl", "xl:text-5xl")}>{service.title}</h3>
-                <GoArrowDownRight className={cn("text-3xl arrow", "xl:text-6xl")} />
-              </div>
-            </div>
-          ))}
+      <section className={cn("py-4 border-t space-y-24", "xl:space-y-36")}>
+        <div className="flex items-center gap-2">
+          <h3 className={cn('uppercase font-semibold text-base', "lg:text-4xl", "xl:text-2xl")}>About</h3>
+          <GoArrowDownRight className={cn("text-lg", "xl:text-2xl")} />
+        </div>
+        <div className={cn("text-2xl", "xl:text-5xl xl:leading-[60px]")}>
+          <p className={cn("xl:indent-52")}>Beolika is my artistic name, <span className="opacity-50">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-50">from French Riviera with 5 years experience </span>working remotely.</p>
+        </div>
+        <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-0 xl:flex xl:justify-between xl:items-start')}>
+          <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
+          <ul className="lg:space-y-4">
+            {[
+              {title: "Web Development"},
+              {title: "Ecommerce"},
+              {title: "3D Design"},
+            ].map((services, index) => (
+              <li key={index} className={cn('w-full text-3xl duration-500 delay-75', "hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-5xl xl:text-right')}>{services.title}</li>
+            ))}
+          </ul>
         </div>
       </section>
-      <div className={cn("text-2xl", "xl:text-5xl xl:leading-[60px] xl:pt-44")}>
-        <p className={cn("xl:indent-52")}>Beolika is my artistic name, <span className="opacity-50">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-50">from French Riviera with 5 years experience </span>working remotely.</p>
-      </div>
-      <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-14')}>
-        <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
-        <ul className="lg:space-y-4">
-          {[
-            {title: "Web Development"},
-            {title: "Ecommerce"},
-            {title: "3D Design"},
-          ].map((services, index) => (
-            <li key={index} className={cn('w-full text-2xl duration-500 delay-75 text-white', "hover:opacity-100 hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-5xl')}>{services.title}</li>
-          ))}
-        </ul>
-      </div>
-      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
-          {[
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-            {title: "Works"},
-          ].map((service, index) => (
-            <div key={index} className="marquee__inner">
-              <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-3xl', "lg:text-4xl", "xl:text-5xl")}>{service.title}</h3>
-                <GoArrowDownRight className={cn("text-3xl arrow", "xl:text-6xl")} />
-              </div>
-            </div>
-          ))}
+      <section className={cn("py-4 border-t space-y-24", "xl:space-y-36")}>
+        <div className="flex items-center gap-2">
+          <h3 className={cn('uppercase font-semibold text-base', "lg:text-4xl", "xl:text-2xl")}>Works</h3>
+          <GoArrowDownRight className={cn("text-lg", "xl:text-2xl")} />
         </div>
         <div>
           {works && works.slice(0,6).map((work, index) => (
-            <Link key={index} href={`/cases/${work.slug}`}>
+            <Link key={index} href={`/cases/${work.slug}`} scroll>
               <div             
-                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-white hover:text-background', 'xl:py-8')}>
-                <p className={cn('font-bold text-xl w-full', 'xl:text-5xl')}>{work.title}</p>
+                className={cn('border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground hover:text-background', 'xl:py-8')}>
+                <p className={cn('font-semibold text-xl w-full', 'xl:text-5xl')}>{work.title}</p>
                 <p className={cn('font-light text-sm w-full', 'xs:text-lg', "md:text-2xl", 'xl:text-2xl')}>{work.category}</p>
-                <div className={cn('font-bold text-xl', 'xl:text-5xl')}>{work.date.slice(2)}</div>
+                <div className={cn('font-semibold text-xl', 'xl:text-5xl')}>{work.date.slice(2)}</div>
               </div>
             </Link>
           ))}
@@ -132,8 +99,8 @@ const Home = ({works, articles}: WorksProps) => {
       {/* <div className={cn("text-3xl leading-10 font-black uppercase grid justify-end textScroll pb-44", "xs:text-4xl", "md:text-5xl", "xl:text-7xl")}>
         <p className={cn("text-right", "xl:w-[1400px]")}><span className="opacity-50">Passionate about architectural visualization,</span> I love creating inspiring 3D spaces.</p>
       </div>
-      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
+      <section className={cn("space-y-44 py-20", "xl:space-y-36")}>
+        <div className={cn("marquee absolute left-0 right-0 border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-foreground duration-500 delay-75", "sm:py-4", "lg:py-7")}>
           {[
             {title: "Playground"},
             {title: "Playground"},
@@ -170,32 +137,13 @@ const Home = ({works, articles}: WorksProps) => {
           </CarouselContent>
         </Carousel>
       </section> */}
-      <div className={cn("text-2xl grid justify-end", "xl:text-5xl xl:leading-[60px]")}>
-        <p className={cn("text-right", "xl:w-[1000px]")}>
-          Apart from projects, I write web content <span className="opacity-50">on development & psychology</span> for the Medium platform.
-        </p>
-      </div>
-      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
-          {[
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-            {title: "News"},
-          ].map((service, index) => (
-            <div key={index} className="marquee__inner">
-              <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-3xl', "lg:text-4xl", "xl:text-5xl")}>{service.title}</h3>
-                <GoArrowDownRight className={cn("text-3xl arrow", "xl:text-6xl")} />
-              </div>
-            </div>
-          ))}
+      <section className={cn("py-4 border-t space-y-24", "xl:space-y-36")}>
+        <div className="flex items-center gap-2">
+          <h3 className={cn('uppercase font-semibold text-base', "lg:text-4xl", "xl:text-2xl")}>News</h3>
+          <GoArrowDownRight className={cn("text-lg", "xl:text-2xl")} />
+        </div>
+        <div className={cn("text-2xl", "xl:text-5xl xl:leading-[60px]")}>
+          <p className={cn("xl:indent-52")}>Apart from projects, I write web content <span className="opacity-50">on development & psychology</span> for the Medium platform.</p>
         </div>
         <Carousel
           opts={{
@@ -212,27 +160,10 @@ const Home = ({works, articles}: WorksProps) => {
           </CarouselContent>
         </Carousel>
       </section>
-      <section className={cn("space-y-44 py-20", "xl:space-y-72")}>
-        <div className={cn("marquee absolute left-0 right-0 text-white border-b py-4 flex uppercase overflow-hidden gap-10", "hover:text-background hover:bg-white duration-500 delay-75", "sm:py-4", "lg:py-7")}>
-          {[
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-            {title: "Inquiries"},
-          ].map((service, index) => (
-            <div key={index} className="marquee__inner">
-              <div className="marquee__part flex items-center gap-10">
-                <h3 className={cn('uppercase font-black text-3xl', "lg:text-4xl", "xl:text-5xl")}>{service.title}</h3>
-                <GoArrowDownRight className={cn("text-3xl arrow", "xl:text-6xl")} />
-              </div>
-            </div>
-          ))}
+      <section className={cn("py-4 border-t space-y-24", "xl:space-y-36")}>
+        <div className="flex items-center gap-2">
+          <h3 className={cn('uppercase font-semibold text-base', "lg:text-4xl", "xl:text-2xl")}>Inquiries</h3>
+          <GoArrowDownRight className={cn("text-lg", "xl:text-2xl")} />
         </div>
         <div className={cn("space-y-10", "md:space-y-20")}>
           <div>
@@ -261,8 +192,8 @@ const Home = ({works, articles}: WorksProps) => {
             ].map((social,index) => (
               <Link key={index} href={social.slug} target="_blank" rel="noopener noreferrer">
                 <div             
-                  className={cn('group border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-white hover:text-background', 'xl:py-8')}>
-                  <p className={cn('font-bold text-xl w-full', 'xl:text-5xl')}>{social.title}</p>
+                  className={cn('group border-b flex items-center justify-between py-6 w-full cursor-pointer', 'duration-500 delay-75', 'hover:px-2 hover:md:px-8 hover:xl:px-10 hover:bg-foreground hover:text-background', 'xl:py-8')}>
+                  <p className={cn('font-semibold text-xl w-full', 'xl:text-5xl')}>{social.title}</p>
                   <GoArrowDownRight className={cn("text-3xl group-hover:rotate-[-90deg]", "xl:text-6xl")} />
                 </div>
               </Link>
@@ -270,6 +201,7 @@ const Home = ({works, articles}: WorksProps) => {
           </div>
         </div>
       </section>
+      <Copyright />
     </div>
   );  
 };
