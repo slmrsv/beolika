@@ -54,7 +54,7 @@ const Blog = ({articles}: BlogProps) => {
         </div>
         {filteredArticles?.map((article, index) => (
           <div key={index}>
-            <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} link={article.link} />
+            <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} />
           </div>
         ))}
       </div>

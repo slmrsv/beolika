@@ -16,7 +16,7 @@ const ArticleCard = ({
 
   return (
     <Card
-      className={cn("min-h-80 flex flex-col h-full text-primary font-ms p-2 space-y-4", "md:space-y-8", "lg:space-y-10 lg:min-h-96", "xl:space-y-14 xl:min-h-[400px]", "hover:bg-foreground/30 hover:border-none group")}>
+      className={cn("min-h-80 flex flex-col h-full text-primary font-ms p-2 space-y-4", "md:space-y-8",'duration-500 hover:scale-95', "lg:space-y-10 lg:min-h-96", "xl:space-y-14 xl:min-h-[400px]", "hover:bg-foreground/30 hover:border-none group")}>
       <CardHeader className={cn("text-base font-light text-ms", "md:text-lg", "group-hover:text-background")}>
         {date}
       </CardHeader>

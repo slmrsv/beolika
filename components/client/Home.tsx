@@ -66,14 +66,19 @@ const Home = ({works, articles}: WorksProps) => {
           <p className={cn("xl:indent-52")}>Beolika is my artistic name, <span className="opacity-50">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-50">from French Riviera with 5 years experience </span>working remotely.</p>
         </div>
         <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-0 xl:flex xl:justify-between xl:items-start')}>
-          <p className={cn("font-montserrat uppercase text-xs", "lg:text-base")}>Services</p>
-          <ul className="lg:space-y-4">
+          <p className={cn("font-montserrat uppercase pt-8 text-xs", "lg:text-base lg:w-[900px]")}>Services</p>
+          <ul className="lg:space-y-4 w-full">
             {[
-              {title: "Web Development"},
-              {title: "Ecommerce"},
-              {title: "3D Design"},
+              {title: "Frontend Development", description: "From your designs in Figma or Sketch, I create pixel-perfect responsive components, responsive web interfaces for landing pages, applications, SaaS and e-commerce, connected to back-end APIs for a seamless user experience."},
+              {title: "Backend Development", description: "I provide complete application development with NextJS, including secure APIs with NextAuth, TypeScript structure and data validation with Zod, combined with Prisma and PostgreSQL for optimal performance and security."},
+              {title: "3D Design", description: "With expertise in Blender modeling and a passion for architecture, I transform concepts into memorable images, enabling effective and memorable communication. In my spare time, I like to create architectural visualization renderings."},
             ].map((services, index) => (
-              <li key={index} className={cn('w-full text-3xl duration-500 delay-75', "hover:px-2 hover:md:px-8 hover:xl:px-10", 'xl:text-5xl xl:text-right')}>{services.title}</li>
+              <li key={index} className={cn('w-full text-2xl', 'xl:text-5xl')}>
+                <div className={cn("border-t py-6 space-y-4 duration-500 delay-75", "hover:px-2 hover:md:px-8 hover:xl:px-10", "xl:py-10")}>
+                  <p>{services.title}</p>
+                  <p className={cn("text-base font-light")}>{services.description}</p>
+                </div>
+              </li>
             ))}
           </ul>
         </div>
@@ -153,8 +158,8 @@ const Home = ({works, articles}: WorksProps) => {
         >
           <CarouselContent>
             {articles?.map((article, index) => (
-              <CarouselItem className="lg:basis-1/3" key={index}>
-                <Link href={article.link}>
+              <CarouselItem className="lg:basis-1/3 drag" key={index}>
+                <Link href={article.link} target="_blank" rel="noopener noreferrer">
                   <ArticleCard date={article.date} title={article.title} readingTime={article.ReadingTime} />
                 </Link>
               </CarouselItem>
