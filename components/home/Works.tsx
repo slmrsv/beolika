@@ -16,7 +16,7 @@ const Works = ({works}: WorksProps) => {
   useGSAP(() => {
     const circle = document.querySelector(".circle") as HTMLElement;
     // eslint-disable-next-line no-undef
-    const frames = document.querySelectorAll(".frame") as NodeListOf<HTMLElement>;
+    const worksMouse = document.querySelectorAll(".works") as NodeListOf<HTMLElement>;
 
     const handleMouseMove = (event: MouseEvent) => {
       if (!circle) {
@@ -53,16 +53,16 @@ const Works = ({works}: WorksProps) => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    frames.forEach((frame) => {
-      frame.addEventListener('mousemove', handleFrameMouseMove);
-      frame.addEventListener('mouseleave', handleFrameMouseLeave);
+    worksMouse.forEach((workMouse) => {
+      workMouse.addEventListener('mousemove', handleFrameMouseMove);
+      workMouse.addEventListener('mouseleave', handleFrameMouseLeave);
     });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      frames.forEach((frame) => {
-        frame.removeEventListener('mousemove', handleFrameMouseMove);
-        frame.removeEventListener('mouseleave', handleFrameMouseLeave);
+      worksMouse.forEach((workMouse) => {
+        workMouse.removeEventListener('mousemove', handleFrameMouseMove);
+        workMouse.removeEventListener('mouseleave', handleFrameMouseLeave);
       });
     };
   }, []);
@@ -79,7 +79,7 @@ const Works = ({works}: WorksProps) => {
             <div className={cn("xl:text-2xl")}>{work.category}</div>
             <p className={cn("xl:text-xl")}>{work.date}</p>
           </div>
-          <Link href={`/cases/${work.slug}`} scroll={false} className={cn("frame w-full py-20 block space-y-6", "xl:flex xl:items-center xl:gap-20 xl:py-44", "2xl:gap-44", index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse')}>
+          <Link href={`/cases/${work.slug}`} scroll={false} className={cn("works w-full py-20 block space-y-6", "xl:flex xl:items-center xl:gap-20 xl:py-44", "2xl:gap-44", index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse')}>
             <Image alt={work.pictures[0].alt} src={work.pictures[0].image} width={1000} height={750} className={cn("rounded-3xl border border-foreground/20", "xl:max-w-[1000px]")}></Image>
             <p className={cn("text-2xl", "xl:text-8xl")}>{work.title}</p>
           </Link>
