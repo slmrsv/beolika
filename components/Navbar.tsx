@@ -63,10 +63,9 @@ const Navbar = () => {
       </div>
       {isMenuOpen && <Menu handleClose={setIsMenuOpen} />} */}
       {pathname.includes("cases") && (
-        <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
-          <IoIosArrowDropleft className="text-2xl"/>
-          <Link href="/" className="text-xl font-montserrat font-bold uppercase">Back</Link>
-        </div>
+        <Link href="/" className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
+          <IoIosArrowDropleft className="text-2xl"/>Back
+        </Link>
       )}
     </Suspense>
   );

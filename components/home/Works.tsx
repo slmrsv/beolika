@@ -56,7 +56,9 @@ const Works = ({works}: WorksProps) => {
     worksMouse.forEach((workMouse) => {
       workMouse.addEventListener('mousemove', handleFrameMouseMove);
       workMouse.addEventListener('mouseleave', handleFrameMouseLeave);
+      workMouse.addEventListener('click', handleFrameMouseLeave);
     });
+
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -66,6 +68,7 @@ const Works = ({works}: WorksProps) => {
       });
     };
   }, []);
+  
 
   return (
     <section className={cn("py-4 border-t")}>
@@ -79,7 +82,7 @@ const Works = ({works}: WorksProps) => {
             <div className={cn("xl:text-2xl")}>{work.category}</div>
             <p className={cn("xl:text-xl")}>{work.date}</p>
           </div>
-          <Link href={`/cases/${work.slug}`} scroll={false} className={cn("works w-full py-20 block space-y-6", "xl:flex xl:items-center xl:gap-20 xl:py-44", "2xl:gap-44", index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse')}>
+          <Link href={`/cases/${work.slug}`} scroll className={cn("works w-full py-20 block space-y-6", "xl:flex xl:items-center xl:gap-20 xl:py-44", "2xl:gap-44", index % 2 === 0 ? 'xl:flex-row' : 'xl:flex-row-reverse')}>
             <Image alt={work.pictures[0].alt} src={work.pictures[0].image} width={1000} height={750} className={cn("rounded-3xl border border-foreground/20", "xl:max-w-[1000px]")}></Image>
             <p className={cn("text-2xl", "xl:text-8xl")}>{work.title}</p>
           </Link>
