@@ -2,13 +2,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { cn } from '@/lib/utils';
 import { Work, Art, Article } from '@/types/types';
-import useTextOpacityOnScroll from "@/animations/useTextOpacityOnScroll";
-import useMarqueeTextScroll from "@/animations/useMarqueeTextScroll";
 import Header from "../home/Header";
 import About from "../home/About";
 import Works from "../home/Works";
 import News from "../home/News";
 import Footer from "../Footer";
+import useMouseFollower from '@/animations/useMouseFollower';
 
 interface WorksProps {
   works: Work[] | null;
@@ -17,10 +16,9 @@ interface WorksProps {
 }
 
 const Home = ({works, articles}: WorksProps) => {
+  useMouseFollower();
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  useTextOpacityOnScroll(".textScroll", ".textOpacity");
-  useMarqueeTextScroll();
 
   useEffect(() => {
     const handleResize = () => {

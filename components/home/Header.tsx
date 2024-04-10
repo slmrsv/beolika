@@ -70,9 +70,6 @@ const Header = ({width}: HeaderProps) => {
       <div className={cn("text-3xl leading-10 w-full h-full flex items-end justify-end", "xs:leading-9", "lg:text-4xl", "xl:text-5xl xl:leading-[60px]")}>
         <p className={cn("text-right indent-2", "md:w-[700px]", "xl:w-[1200px] xl:indent-10")}>A developer who creates <span className="opacity-50">engaging & memorable</span> digital solutions.</p>
       </div>
-      {/*  <div className="absolute h-full w-full">
-          <Torus />
-        </div> */}
     </section>
   );
 };

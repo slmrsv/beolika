@@ -80,10 +80,7 @@ const Footer = () => {
             </p>
           </div> 
           {[
-            {title: "Facebook", slug: "https://www.facebook.com/profile.php?id=100088838483732"},
-            {title: "Instagram", slug: "https://instagram.com/beolika"},
-            {title: "Twitter", slug: "https://twitter.com/beolika_"},
-            {title: "Pinterest", slug: "https://pinterest.com/beolika"},
+            {title: "Medium", slug: "https://medium.com/@beolika"},
             {title: "Discord", slug: "https://discord.com/users/849428669180542976"},
             {title: "Github", slug: "https://github.com/beolika"},
           ].map((social,index) => (
