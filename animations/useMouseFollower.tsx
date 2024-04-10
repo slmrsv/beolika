@@ -60,13 +60,13 @@ const useMouseFollower = (
 
       isTextScrollingEnabledY  ? (
         gsap.to(frame.children, {
-          color: 'white',
+          color: 'background',
           duration: 0.4,
           y: '-2vw',
         })
       ) : (
         gsap.to(frame.children, {
-          color: 'white',
+          color: 'background',
           duration: 0.4,
         })
       );
@@ -84,13 +84,13 @@ const useMouseFollower = (
 
       isTextScrollingEnabledY  ? (
         gsap.to(frame.children, {
-          color: 'white',
+          color: 'background',
           duration: 0.4,
           y: 0,
         })
       ) : (
         gsap.to(frame.children, {
-          color: 'white',
+          color: 'background',
           duration: 0.4,
         })
       );

@@ -6,13 +6,13 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GoArrowDownRight } from "react-icons/go";
-import { workCursorStore } from "@/stores";
+import { isWorkCursorStore } from "@/stores";
 
 interface WorksProps {
     works: Work[] | null;
 }
 const Works = ({works}: WorksProps) => {
-  const setIsWorkCursor = workCursorStore(state => state.setIsWorkCursor);
+  const setIsWorkCursor = isWorkCursorStore(state => state.setIsWorkCursor);
   useGSAP(() => {
     const circle = document.querySelector(".circle") as HTMLElement;
     // eslint-disable-next-line no-undef

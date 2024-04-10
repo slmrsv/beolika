@@ -26,7 +26,18 @@ interface WorkCursorStore {
   setIsWorkCursor: (value: boolean) => void;
 }
 
-export const workCursorStore = create<WorkCursorStore>((set) => ({
+export const isWorkCursorStore = create<WorkCursorStore>((set) => ({
   isWorkCursor: false,
   setIsWorkCursor: (value) => set(() => ({ isWorkCursor: value })),
+}));
+
+interface DragCursorStore {
+  isDragCursor: boolean;
+  // eslint-disable-next-line no-unused-vars
+  setIsDragCursor: (value: boolean) => void;
+}
+
+export const isDragCursorStore = create<DragCursorStore>((set) => ({
+  isDragCursor: false,
+  setIsDragCursor: (value) => set(() => ({ isDragCursor: value })),
 }));
