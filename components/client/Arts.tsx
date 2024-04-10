@@ -1,5 +1,4 @@
 "use client";
-import Copyright from "@/components/Copyright";
 import { Art } from "@/types/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -20,7 +19,6 @@ const Arts = ({arts}: ArtProps) => {
           </div>
         ))}
       </div>
-      <Copyright />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 import { Work } from '@/types/types';
 import { cn } from '@/lib/utils';
-import Copyright from '@/components/Copyright';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -43,7 +42,6 @@ const Works = ({works}: WorksProps) => {
           </Link>
         ))}
       </div>
-      <Copyright />
     </div>
   );
 };

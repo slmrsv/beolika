@@ -32,6 +32,7 @@ export type Work = {
     category: string;
     date: string;
     slug: string;
+    pictures: Picture[];
 }
 
 export type Case = {

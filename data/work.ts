@@ -11,7 +11,8 @@ export const getWorks = async () => {
         title: true,
         category: true,
         date: true,
-        slug: true
+        slug: true,
+        pictures: true
       }
     });
   

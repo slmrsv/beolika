@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import ArticleCard from "@/components/ArticleCard";
-import Copyright from "@/components/Copyright";
 import { Article } from "@/types/types";
 import React, { useState } from "react";
 
@@ -58,7 +57,6 @@ const Blog = ({articles}: BlogProps) => {
           </div>
         ))}
       </div>
-      <Copyright />
     </div>
   );
 };

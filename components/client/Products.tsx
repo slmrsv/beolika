@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/select";
 import { Product } from "@/types/types";
 import { cn } from "@/lib/utils";
-import Copyright from "@/components/Copyright";
 import ProductCard from "@/components/ProductCard";
 import { useState } from "react";
 
@@ -64,7 +63,6 @@ const Products = ({products}: ProductsProps) => {
             detailUrl={product.detailUrl} />
         ))}
       </div>
-      <Copyright />
     </div>
 
   );
