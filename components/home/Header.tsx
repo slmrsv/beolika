@@ -6,7 +6,7 @@ interface HeaderProps {
 const Header = ({width}: HeaderProps) => {
   return (
     <section className={cn('h-[85vh] flex flex-col justify-center items-center mb-2', "xl:-mt-8 xl:h-[93vh]")}>
-      <h1 className={cn("font-black uppercase text-center leading-[90%] pb-1", "xl:mt-5")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
+      <h1 className={cn("font-black uppercase text-center leading-[90%] pb-1 title", "xl:mt-5")} style={{ fontSize: width / 4.8 + "px"}}>Beolika</h1>
       <div className={cn("flex justify-between w-full uppercase border-t pt-2 text-[10px]", "xs:text-xs", "sm:text-xs", "lg:pt-4", "xl:text-xl")}>
         <p>Available WorldWide</p>
         <p>Product Developer</p>
