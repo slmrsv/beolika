@@ -80,9 +80,10 @@ const Footer = () => {
             </p>
           </div> 
           {[
-            {title: "Medium", slug: "https://medium.com/@beolika"},
-            {title: "Discord", slug: "https://discord.com/users/849428669180542976"},
+            {title: "Savee", slug: "https://savee.it/beolika/"},
             {title: "Github", slug: "https://github.com/beolika"},
+            {title: "Discord", slug: "https://discord.com/users/849428669180542976"},
+            {title: "Medium", slug: "https://medium.com/@beolika"},
           ].map((social,index) => (
             <Link key={index} href={social.slug} target="_blank" rel="noopener noreferrer">
               <div             

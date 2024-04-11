@@ -9,7 +9,14 @@ const About = () => {
         <GoArrowDownRight className={cn("text-lg", "xl:text-2xl")} />
       </div>
       <div className={cn("text-2xl", "xl:text-5xl xl:leading-[60px]")}>
-        <p className={cn("xl:indent-52")}>Beolika is my artistic name, <span className="opacity-50">my real name is Sélim Baouz.</span> <br />A French Independent Developer <span className="opacity-50">from French Riviera with 5 years experience </span>who working remotely.</p>
+        <p className={cn("xl:indent-52")}>
+          Beolika is my artistic name, 
+          <span className="opacity-50">my real name is Sélim Baouz.</span> 
+          <br />
+          A French Independent Developer 
+          <span className="opacity-50"> from French Riviera with 5 years experience </span>
+          who works remotely.
+        </p>
       </div>
       <div className={cn('py-6 space-y-8', 'xl:py-8 xl:space-y-0 xl:flex xl:justify-between xl:items-start')}>
         <p className={cn("font-montserrat uppercase pt-8 text-xs", "lg:text-base lg:w-[900px]")}>Services</p>
@@ -22,7 +29,7 @@ const About = () => {
             <li key={index} className={cn('w-full text-2xl', 'xl:text-5xl')}>
               <div className={cn("border-t py-6 space-y-4 duration-500 delay-75", "xl:py-8 xl:space-y-8")}>
                 <p>{services.title}</p>
-                <p className={cn("text-base font-light", "xl:text-xl")}>{services.description}</p>
+                <p className={cn("text-base opacity-60", "xl:text-xl")}>{services.description}</p>
               </div>
             </li>
           ))}
