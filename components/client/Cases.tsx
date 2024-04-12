@@ -17,15 +17,11 @@ const Cases = ({cases, previousProjectSlug, nextProjectSlug}: CasesProps) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const circle = document.querySelector(".circle") as HTMLElement;
-  
     circle.style.setProperty("scale", "0");
     circle.style.setProperty("opacity", "0");
     circle.style.setProperty("top", "0");
     circle.style.setProperty("left", "0");
-  }, []);
-  
-  useEffect(() => {
-    const circle = document.querySelector(".circle") as HTMLElement;
+
     const handleMouseMove = () => {
       if (circle) {
         circle.style.setProperty("scale", "1");

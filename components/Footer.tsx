@@ -1,61 +1,8 @@
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { GoArrowDownRight } from "react-icons/go";
-// eslint-disable-next-line import/no-named-as-default
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 const Footer = () => {
-  useGSAP(() => {
-    const circle = document.querySelector(".circle") as HTMLElement;
-    // eslint-disable-next-line no-undef
-    const mailCursorMouse = document.querySelectorAll(".mailCursor") as NodeListOf<HTMLElement>;
-
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        x: event.clientX + window.scrollX,
-        y: event.clientY + window.scrollY,
-        duration: 0.3,
-        ease: 'expo.out',
-      });
-    };
-
-    const handleFrameMouseMove = () => {
-      gsap.to(circle, {
-        scale: 15,
-      });
-    };
-
-    const handleFrameMouseLeave = () => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        scale: 1,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    mailCursorMouse.forEach((mailCursor) => {
-      mailCursor.addEventListener('mousemove', handleFrameMouseMove);
-      mailCursor.addEventListener('mouseleave', handleFrameMouseLeave);
-    });
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      mailCursorMouse.forEach((mailCursor) => {
-        mailCursor.removeEventListener('mousemove', handleFrameMouseMove);
-        mailCursor.removeEventListener('mouseleave', handleFrameMouseLeave);
-      });
-    };
-  }, []);
-
   return (
     <section className={cn("py-4 border-t space-y-24", "xl:space-y-36")}>
       <div className="flex items-center gap-2">
@@ -67,11 +14,11 @@ const Footer = () => {
           <p className={cn('mx-auto pb-10 text-2xl', "md:mx-0 md:text-4xl", "xl:text-5xl xl:w-[1400px] xl:leading-[60px]")}>
             <span className="opacity-50">Do you</span> have a project in mind?
             <br/>
-            <span className="opacity-50">Send me a message on</span> my e-mail:
+            <span className="opacity-50">Send me a message on</span> my e-link:
           </p>
         </div> 
         <div>
-          <Link href="mailto:hello@beolika.com" className={cn('mailCursor font-semibold cursor-pointer text-xl', "md:text-3xl", "xl:text-5xl xl:w-[850px]", "hover:underline")}>hello@beolika.com</Link>
+          <Link href="mailto:hello@beolika.com" className={cn('linkCursor font-semibold cursor-pointer text-xl', "md:text-3xl", "xl:text-5xl xl:w-[850px]", "hover:underline")}>hello@beolika.com</Link>
         </div>
         <div className="pt-10">
           <div>

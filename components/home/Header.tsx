@@ -1,63 +1,10 @@
 import { cn } from '@/lib/utils';
 // eslint-disable-next-line import/no-named-as-default
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 interface HeaderProps {
     width: number;
 }
 const Header = ({width}: HeaderProps) => {
-  useGSAP(() => {
-    const circle = document.querySelector(".circle") as HTMLElement;
-    // eslint-disable-next-line no-undef
-    const titleCursorMouse = document.querySelectorAll(".title") as NodeListOf<HTMLElement>;
-
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        x: event.clientX + window.scrollX,
-        y: event.clientY + window.scrollY,
-        duration: 0.3,
-        ease: 'expo.out',
-      });
-    };
-
-    const handleFrameMouseMove = () => {
-      gsap.to(circle, {
-        scale: 40,
-      });
-
-    };
-
-    const handleFrameMouseLeave = () => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        scale: 1,
-      });
-
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    titleCursorMouse.forEach((title) => {
-      title.addEventListener('mousemove', handleFrameMouseMove);
-      title.addEventListener('mouseleave', handleFrameMouseLeave);
-    });
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      titleCursorMouse.forEach((title) => {
-        title.removeEventListener('mousemove', handleFrameMouseMove);
-        title.removeEventListener('mouseleave', handleFrameMouseLeave);
-      });
-    };
-  }, []);
   
   return (
     <section className={cn('h-[85vh] flex flex-col justify-center items-center mb-2', "xl:-mt-8 xl:h-[93vh]")}>

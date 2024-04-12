@@ -1,9 +1,9 @@
 "use client";
 import { cn } from '@/lib/utils';
-import React, { useEffect } from 'react';
+import React from 'react';
 import localFont from "next/font/local";
 import { Montserrat, Audiowide, Syncopate } from "next/font/google";
-import { menuStore } from "@/stores";
+/* import { menuStore } from "@/stores"; */
 import useLenis from '@/animations/useLenis';
 import CircleMouse from './CircleMouse';
 import useMouseFollower from '@/animations/useMouseFollower';
@@ -25,12 +25,12 @@ const LayoutClient = ({
 }: Readonly<{
     children: React.ReactNode;
   }>) => {
-  const isMenuOpen = menuStore((state) => state.isMenuOpen);
+  /* const isMenuOpen = menuStore((state) => state.isMenuOpen); */
   
   useLenis();
   useMouseFollower();
   
-  useEffect(() => {
+  /* useEffect(() => {
     if (isMenuOpen) {
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
@@ -41,7 +41,7 @@ const LayoutClient = ({
     return () => {
       document.body.style.position = 'static';
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen]); */
 
   
   return (

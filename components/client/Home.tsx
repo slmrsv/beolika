@@ -7,7 +7,10 @@ import About from "../home/About";
 import Works from "../home/Works";
 import News from "../home/News";
 import Footer from "../Footer";
-import useMouseFollower from '@/animations/useMouseFollower';
+import { useGSAP } from "@gsap/react";
+// eslint-disable-next-line import/no-named-as-default
+import gsap from "gsap";
+import { isDragCursorStore } from "@/stores";
 
 interface WorksProps {
   works: Work[] | null;
@@ -16,9 +19,11 @@ interface WorksProps {
 }
 
 const Home = ({works, articles}: WorksProps) => {
-  useMouseFollower();
+  const setIsDragCursor = isDragCursorStore(state => state.setIsDragCursor);
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+  let selector = gsap.utils.selector(ref);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +37,82 @@ const Home = ({works, articles}: WorksProps) => {
   
     return () => {
       window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useGSAP(() => {
+    const circle = document.querySelector(".circle") as HTMLElement;
+    const titleCursorMouse = selector(".title");
+    const dragCursorMouse = selector(".drag");
+    const linkCursorMouse = selector(".linkCursor");
+    
+    if (!circle) {
+      return;
+    }
+
+    titleCursorMouse.forEach((title) => {
+      title.onmousemove = () => {
+        gsap.to(circle, {
+          scale: 40,
+        });
+      };
+      title.onmouseleave = () => {
+        gsap.to(circle, {
+          scale: 1,
+        });
+      };
+    });
+
+    dragCursorMouse.forEach((drag) => {
+      drag.onmousemove = () => {
+        gsap.to(circle, {
+          scale: 13,
+        });
+  
+        setIsDragCursor(true);
+      };
+      drag.onmouseleave = () => {
+        gsap.to(circle, {
+          scale: 1,
+        });
+  
+        setIsDragCursor(false);
+      };
+    });
+
+    linkCursorMouse.forEach((linkCursor) => {
+      linkCursor.onmousemove = () => {
+        gsap.to(circle, {
+          scale: 15,
+        });
+      };
+      linkCursor.onmouseleave = () => {
+        gsap.to(circle, {
+          scale: 1,
+        });
+      };
+    });
+
+    return () => {
+      window.onmousemove = null;
+      if (titleCursorMouse) {
+        titleCursorMouse.forEach((title) => {
+          title.onmousemove = null;
+          title.onmouseleave = null;
+        });
+      }
+      if (dragCursorMouse) {
+        dragCursorMouse.forEach((drag) => {
+          drag.onmousemove = null;
+          drag.onmouseleave = null;
+        });
+      }
+      if (linkCursorMouse) {
+        linkCursorMouse.forEach((linkCursor) => {
+          linkCursor.onmousemove = null;
+          linkCursor.onmouseleave = null;
+        });
+      }
     };
   }, []);
   

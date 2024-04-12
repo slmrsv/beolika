@@ -9,71 +9,12 @@ import {
 import Link from 'next/link';
 import ArticleCard from '../ArticleCard';
 import { Article } from '@/types/types';
-// eslint-disable-next-line import/no-named-as-default
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { isDragCursorStore } from "@/stores";
 
 interface NewsProps {
     articles: Article[] | null;
 }
 
 const News = ({articles}: NewsProps) => {
-  const setIsDragCursor = isDragCursorStore(state => state.setIsDragCursor);
-  useGSAP(() => {
-    const circle = document.querySelector(".circle") as HTMLElement;
-    // eslint-disable-next-line no-undef
-    const dragMouse = document.querySelectorAll(".drag") as NodeListOf<HTMLElement>;
-
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        x: event.clientX + window.scrollX,
-        y: event.clientY + window.scrollY,
-        duration: 0.3,
-        ease: 'expo.out',
-      });
-    };
-
-    const handleFrameMouseMove = () => {
-      gsap.to(circle, {
-        scale: 13,
-      });
-
-      setIsDragCursor(true);
-    };
-
-    const handleFrameMouseLeave = () => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        scale: 1,
-      });
-
-      setIsDragCursor(false);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    dragMouse.forEach((drag) => {
-      drag.addEventListener('mousemove', handleFrameMouseMove);
-      drag.addEventListener('mouseleave', handleFrameMouseLeave);
-    });
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      dragMouse.forEach((drag) => {
-        drag.removeEventListener('mousemove', handleFrameMouseMove);
-        drag.removeEventListener('mouseleave', handleFrameMouseLeave);
-      });
-    };
-  }, []);
-  
   return (
     <section className={cn("py-4 border-t space-y-24", "xl:space-y-36")}>
       <div className="flex items-center gap-2">
