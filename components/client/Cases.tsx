@@ -1,5 +1,5 @@
 "use client";
-import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import { GoArrowLeft ,GoArrowRight } from "react-icons/go";
 import { Button } from "@/components/ui/button";
 import { Case, Work } from "@/types/types";
 import { cn } from "@/lib/utils";
@@ -23,18 +23,18 @@ const Cases = ({cases, previousProjectSlug, nextProjectSlug}: CasesProps) => {
     circle.style.setProperty("top", "0");
     circle.style.setProperty("left", "0");
   }, []);
-
+  
   useEffect(() => {
     const circle = document.querySelector(".circle") as HTMLElement;
-    const timeout = setTimeout(() => {
+    const handleMouseMove = () => {
       if (circle) {
         circle.style.setProperty("scale", "1");
         circle.style.setProperty("opacity", "1");
       }
-    }, 1000);
-    return () => clearTimeout(timeout);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-  
 
   return (
     <div className={cn('font-montserrat my-10 space-y-28 text-xl w-full text-center h-full', "md:text-left md:text-2xl", "xl:text-4xl")}>
@@ -67,21 +67,21 @@ const Cases = ({cases, previousProjectSlug, nextProjectSlug}: CasesProps) => {
             {
               "hidden": !previousProjectSlug?.slug
             })}>    	
-            <IoIosArrowDropleft className={cn("text-2xl", "lg:text-4xl")}/>
-            <Link href={`/cases/${previousProjectSlug?.slug}`} className={cn("text-xs uppercase", "xs:text-sm", "md:text-lg", "xl:text-xl")}>Previous projet</Link>
+            <GoArrowLeft className={cn("text-2xl", "lg:text-4xl")}/>
+            <Link href={`/cases/${previousProjectSlug?.slug}`} className={cn("mailCursor text-xs", "xs:text-sm", "md:text-lg", "xl:text-xl")}>Previous projet</Link>
           </div>
           <div className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer", 
             {
               "hidden": !nextProjectSlug?.slug
             })}>    	
-            <Link href={`/cases/${nextProjectSlug?.slug}`} className={cn("text-xs uppercase", "xs:text-sm", "md:text-lg", "xl:text-xl")}>Next project</Link>
-            <IoIosArrowDropright className={cn("text-2xl", "lg:text-4xl")}/>
+            <Link href={`/cases/${nextProjectSlug?.slug}`} className={cn("mailCursor text-xs", "xs:text-sm", "md:text-lg", "xl:text-xl")}>Next project</Link>
+            <GoArrowRight className={cn("text-2xl", "lg:text-4xl")}/>
           </div>
         </div>
         {cases?.siteUrl && (
           <div className={cn('w-full')}>
-            <Button variant="outline" className={cn('rounded-full w-full py-5 text-xl', 'xs:w-72 xs:flex xs:mx-auto', "md:w-80", "xl:py-6 xl:w-96")} asChild>
-              <Link href={cases?.siteUrl} className={cn('xl:text-xl', 'duration-500 delay-75')} target="_blank" rel="noopener noreferrer">View Project</Link>
+            <Button variant="outline" className={cn('rounded-full py-5 text-base w-32 h-32 flex mx-auto', 'xs:w-36 h-36', "md:w-80", "xl:py-6 xl:w-52 xl:h-52")} asChild>
+              <Link href={cases?.siteUrl} className={cn("text-xs", "xs:text-sm", "md:text-lg", "xl:text-xl", 'duration-500 delay-75')} target="_blank" rel="noopener noreferrer">View Project</Link>
             </Button>
           </div>
         )}

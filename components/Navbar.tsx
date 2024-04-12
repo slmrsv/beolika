@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import { usePathname } from "next/navigation";
 import Link from 'next/link';
-import { IoIosArrowDropleft } from "react-icons/io";
+import { GoArrowLeft } from "react-icons/go";
 import { Suspense } from "react";
 import { SkeletonNavBar } from "./skeleton/SkeletonNavBar";
 
@@ -63,8 +63,8 @@ const Navbar = () => {
       </div>
       {isMenuOpen && <Menu handleClose={setIsMenuOpen} />} */}
       {pathname.includes("cases") && (
-        <Link href="/" className={cn("gap-2 flex items-center hover:gap-4 cursor-pointer")}>    	
-          <IoIosArrowDropleft className="text-2xl"/>Back
+        <Link href="/" className={cn("text-xs gap-2 flex items-center hover:gap-4 cursor-pointer", "xs:text-sm", "md:text-lg", "xl:text-xl")}>    	
+          <GoArrowLeft className={cn("text-xs", "lg:text-4xl")} />Back
         </Link>
       )}
     </Suspense>
