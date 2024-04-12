@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import { cn } from '@/lib/utils';
-import { Work, Art, Article } from '@/types/types';
+import { cn } from "@/lib/utils";
+import { Work, Art, Article } from "@/types/types";
 import Header from "../home/Header";
 import About from "../home/About";
 import Works from "../home/Works";
@@ -18,12 +18,13 @@ interface WorksProps {
   articles: Article[] | null;
 }
 
-const Home = ({works, articles}: WorksProps) => {
-  const setIsDragCursor = isDragCursorStore(state => state.setIsDragCursor);
+const Home = ({ works, articles }: WorksProps) => {
+  const setIsDragCursor = isDragCursorStore(
+    (state) => state.setIsDragCursor,
+  );
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   let selector = gsap.utils.selector(ref);
-  
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,21 +32,23 @@ const Home = ({works, articles}: WorksProps) => {
         setWidth(ref.current.clientWidth);
       }
     };
-  
-    handleResize(); 
+
+    handleResize();
     window.addEventListener("resize", handleResize);
-  
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   useGSAP(() => {
-    const circle = document.querySelector(".circle") as HTMLElement;
+    const circle = document.querySelector(
+      ".circle",
+    ) as HTMLElement;
     const titleCursorMouse = selector(".title");
     const dragCursorMouse = selector(".drag");
     const linkCursorMouse = selector(".linkCursor");
-    
+
     if (!circle) {
       return;
     }
@@ -68,14 +71,14 @@ const Home = ({works, articles}: WorksProps) => {
         gsap.to(circle, {
           scale: 13,
         });
-  
+
         setIsDragCursor(true);
       };
       drag.onmouseleave = () => {
         gsap.to(circle, {
           scale: 1,
         });
-  
+
         setIsDragCursor(false);
       };
     });
@@ -115,16 +118,22 @@ const Home = ({works, articles}: WorksProps) => {
       }
     };
   }, []);
-  
+
   return (
-    <div ref={ref} className={cn("font-montserrat space-y-20", "md:space-y-44")}>
+    <div
+      ref={ref}
+      className={cn(
+        "font-montserrat space-y-20",
+        "md:space-y-44",
+      )}
+    >
       <Header width={width} />
       <About />
       <Works works={works} />
       <News articles={articles} />
       <Footer />
     </div>
-  );  
+  );
 };
 
 export default Home;

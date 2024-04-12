@@ -1,15 +1,19 @@
-'use client';
+"use client";
 
-import { ThemeProvider } from 'next-themes';
-import { PropsWithChildren } from 'react';
+import { ThemeProvider } from "next-themes";
+import { PropsWithChildren } from "react";
 
-export const Providers = ({ children }: PropsWithChildren) => {
+export const Providers = ({
+  children,
+}: PropsWithChildren) => {
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme="light" /* enableSystem */>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light" /* enableSystem */
+      >
         {children}
       </ThemeProvider>
     </>
   );
 };
-

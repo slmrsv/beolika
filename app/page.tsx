@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Loading from "./loading"; 
+import Loading from "./loading";
 import Home from "@/components/client/Home";
 import { getWorks } from "@/data/work";
 import { getArts } from "@/data/art";
