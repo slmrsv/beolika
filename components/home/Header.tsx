@@ -8,13 +8,13 @@ const Header = ({ width }: HeaderProps) => {
   return (
     <section
       className={cn(
-        "h-[85vh] flex flex-col justify-center items-center mb-2",
+        "h-[90vh] flex flex-col justify-center items-center mb-2",
         "xl:-mt-8 xl:h-[93vh]",
       )}
     >
       <h1
         className={cn(
-          "font-semibold text-center leading-[90%] pb-1 title",
+          "font-medium text-center leading-[90%] title",
           "xl:mt-5",
         )}
         style={{ fontSize: width / 3.6 + "px" }}
@@ -30,10 +30,15 @@ const Header = ({ width }: HeaderProps) => {
           "xl:text-xl",
         )}
       >
-        <p>Available WorldWide</p>
-        <p>Product Developer</p>
         <p className={cn("hidden", "xl:block")}>
-          ©2024. All Rights Reserved
+          Available WorldWide
+        </p>
+        <p>Multidisciplinary Developer</p>
+        <p className="flex gap-2">
+          ©2024.{" "}
+          <span className={cn("hidden", "xl:block")}>
+            All Rights Reserved
+          </span>
         </p>
       </div>
       <div

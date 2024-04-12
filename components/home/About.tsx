@@ -30,16 +30,20 @@ const About = () => {
         )}
       >
         <p className={cn("xl:indent-52")}>
-          Beolika is my artistic name,
+          A true Swiss Army knife, I'm a{" "}
           <span className="opacity-50">
-            my real name is Sélim Baouz.
+            multidisciplinary developer
+          </span>{" "}
+          from the{" "}
+          <span className="opacity-50">
+            French Riviera{" "}
           </span>
-          <br />A French Independent Developer
+          with 5 years' experience, focused on
           <span className="opacity-50">
             {" "}
-            from French Riviera with 5 years experience{" "}
-          </span>
-          who works remotely.
+            creating digital products
+          </span>{" "}
+          and solutions.
         </p>
       </div>
       <div
