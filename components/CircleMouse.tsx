@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import React from 'react';
 import { isDragCursorStore, isWorkCursorStore } from '@/stores';
 import { GoArrowDownRight } from "react-icons/go";
 

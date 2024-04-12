@@ -5,6 +5,7 @@ import { Case, Work } from "@/types/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 interface CasesProps {
     cases: Case;
@@ -12,8 +13,31 @@ interface CasesProps {
     nextProjectSlug?: Work;
 }
 const Cases = ({cases, previousProjectSlug, nextProjectSlug}: CasesProps) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const circle = document.querySelector(".circle") as HTMLElement;
+  
+    circle.style.setProperty("scale", "0");
+    circle.style.setProperty("opacity", "0");
+    circle.style.setProperty("top", "0");
+    circle.style.setProperty("left", "0");
+  }, []);
+
+  useEffect(() => {
+    const circle = document.querySelector(".circle") as HTMLElement;
+    const timeout = setTimeout(() => {
+      if (circle) {
+        circle.style.setProperty("scale", "1");
+        circle.style.setProperty("opacity", "1");
+      }
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+  
+
   return (
-    <div className={cn('font-montserrat my-10 space-y-28 text-xl w-full text-center', "md:text-left md:text-2xl", "xl:text-4xl")}>
+    <div className={cn('font-montserrat my-10 space-y-28 text-xl w-full text-center h-full', "md:text-left md:text-2xl", "xl:text-4xl")}>
       <div className={cn("border-t pt-8 space-y-14 text-left", "xl:pb-28 xl:space-y-24")}>
         <div className={cn("flex flex-col space-y-14", "md:flex-row md:justify-between md:space-y-0")}>
           <div className={cn("space-y-2", "xl:space-y-2")}>

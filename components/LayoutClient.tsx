@@ -26,11 +26,10 @@ const LayoutClient = ({
     children: React.ReactNode;
   }>) => {
   const isMenuOpen = menuStore((state) => state.isMenuOpen);
-  useMouseFollower({
-    isTextScrollingEnabledY: true,
-  });
+  
   useLenis();
-
+  useMouseFollower();
+  
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.position = 'fixed';
@@ -44,6 +43,7 @@ const LayoutClient = ({
     };
   }, [isMenuOpen]);
 
+  
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={cn(
