@@ -9,7 +9,7 @@ export function SkeletonProfil() {
         <Skeleton className={cn("h-4 w-[180px] mx-auto")} />
         <Skeleton className={cn("h-4 mx-auto w-64", "xl:w-[300px]")} />
       </div>
-      <div className={cn("space-y-14 mt-6", "sm:mt-10","xl:mt-12")}>
+      <div className={cn("space-y-14 mt-6", "sm:mt-10", "xl:mt-12")}>
         <Skeleton className={cn("h-4 w-[180px] mx-auto", "sm:w-52")} />
         <Skeleton className={cn("h-4 w-60 mx-auto", "sm:w-72", "xl:w-[300px]")} />
       </div>
