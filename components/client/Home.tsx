@@ -24,19 +24,12 @@ const Home = ({ works, articles }: WorksProps) => {
   );
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const [stateRef, setStateRef] = useState<HTMLDivElement | null>(null);
-  let selector: gsap.utils.SelectorFunc;
-
-  useEffect(() => {
-    if (ref.current) {
-      setStateRef(ref.current);
-    }
-  }, []);
+  let selector: gsap.utils.SelectorFunc = gsap.utils.selector(ref);
   
   useEffect(() => {
     const handleResize = () => {
-      if (stateRef) {
-        setWidth(stateRef.clientWidth);
+      if (ref.current) {
+        setWidth(ref.current.clientWidth);
       }
     };
     
@@ -46,12 +39,9 @@ const Home = ({ works, articles }: WorksProps) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [stateRef]);
+  }, []);
   
-  useGSAP(() => {
-    if (!stateRef) return;
-    
-    selector = gsap.utils.selector(stateRef);
+  useGSAP(() => {    
     const circle = document.querySelector(
       ".circle",
     ) as HTMLElement;
