@@ -8,7 +8,7 @@ const Header = ({ width }: HeaderProps) => {
   return (
     <section
       className={cn(
-        "h-[90vh] flex flex-col justify-center items-center mb-2",
+        "h-[85vh] flex flex-col justify-center items-center mb-2",
         "xl:-mt-8 xl:h-[93vh]",
       )}
     >
