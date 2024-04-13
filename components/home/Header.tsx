@@ -35,9 +35,9 @@ const Header = ({ width }: HeaderProps) => {
         </p>
         <p>Multidisciplinary Developer</p>
         <p className="flex gap-2">
-          ©2024.{" "}
+          ©2024
           <span className={cn("hidden", "xl:block")}>
-            All Rights Reserved
+            {" "}All Rights Reserved
           </span>
         </p>
       </div>
