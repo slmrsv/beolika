@@ -13,7 +13,6 @@ const About = () => {
         <h3
           className={cn(
             "uppercase font-semibold text-base",
-            "lg:text-4xl",
             "xl:text-2xl",
           )}
         >
@@ -65,7 +64,7 @@ const About = () => {
             {
               title: "Web Design",
               description:
-                "In my previous experiences, I was immersed in the world of design, which reinforced my interest in this field and encouraged me to deepen my skills. As a developer, I find it essential to be able to create a product by starting with the design. This approach enables me to visualize all aspects of the project before developing it, thus guaranteeing a coherent and fluid user experience.",
+                "During my previous experience, I was immersed in the world of design, which reinforced my interest in this field and encouraged me to deepen my skills. As a developer, I find it essential to be able to create a product by starting with the design. This approach enables me to visualize all aspects of the project before developing it, thus guaranteeing a coherent and fluid user experience.",
             },
             {
               title: "Frontend Development",
@@ -80,7 +79,7 @@ const About = () => {
             {
               title: "3D Design",
               description:
-                "As a lover of architectural visualization and immersive experiences, I enjoy transforming concepts into 3D renderings with Blender in my spare time. This creative activity allows me to explore new artistic perspectives and stimulate my creativity.",
+                "As a lover of architectural visualization, I enjoy transforming concepts into 3D renderings with Blender in my spare time. This creative activity allows me to explore new artistic perspectives and stimulate my creativity.",
             },
           ].map((services, index) => (
             <li
@@ -96,11 +95,15 @@ const About = () => {
                   "xl:py-8 xl:space-y-8",
                 )}
               >
-                <p>{services.title}</p>
+                <p className={cn(
+                  "uppercase font-medium text-base",
+                  "lg:pt-4",
+                  "xl:text-xl",
+                )}>{services.title}</p>
                 <p
                   className={cn(
-                    "text-base opacity-50",
-                    "xl:text-xl",
+                    "text-sm font-light",
+                    "xl:text-lg",
                   )}
                 >
                   {services.description}
