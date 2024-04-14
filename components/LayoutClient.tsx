@@ -8,6 +8,7 @@ import {
   Syncopate,
 } from "next/font/google";
 /* import { menuStore } from "@/stores"; */
+import useLenis from "@/animations/useLenis";
 import CircleMouse from "./CircleMouse";
 import useMouseFollower from "@/animations/useMouseFollower";
 
@@ -52,6 +53,7 @@ const LayoutClient = ({
 }>) => {
   /* const isMenuOpen = menuStore((state) => state.isMenuOpen); */
 
+  useLenis();
   useMouseFollower();
 
   /* useEffect(() => {

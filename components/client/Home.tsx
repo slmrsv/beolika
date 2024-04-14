@@ -14,7 +14,6 @@ import {
   isDragCursorStore,
   isWorkCursorStore,
 } from "@/stores";
-import useLenis from "@/animations/useLenis";
 
 interface WorksProps {
   works: Work[] | null;
@@ -33,7 +32,6 @@ const Home = ({ works, articles }: WorksProps) => {
   const ref = useRef<HTMLDivElement>(null);
   let selector: gsap.utils.SelectorFunc =
     gsap.utils.selector(ref);
-  useLenis();
     
   useEffect(() => {
     const handleResize = () => {

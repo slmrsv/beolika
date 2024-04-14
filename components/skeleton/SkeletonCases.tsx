@@ -3,96 +3,44 @@ import { cn } from "@/lib/utils";
 
 export default function SkeletonCases() {
   return (
-    <div className={cn("my-10 space-y-28 w-full")}>
+    <div className={cn("h-full w-full")}>
+      <Skeleton
+        className={cn(
+          "h-2 w-20",
+          "md:w-48",
+          "xl:w-52",
+        )}
+      />
       <div
         className={cn(
-          "pt-8 space-y-14",
-          "xl:pb-28 xl:space-y-24",
+          "space-y-10",
+          "xl:pb-28 xl:space-y-20",
         )}
       >
         <div
           className={cn(
-            "hidden",
-            "md:flex md:justify-between md:items-center",
+            "xl:flex xl:flex-col xl:h-[80vh] xl:justify-end",
           )}
         >
-          <div className={cn("space-y-7")}>
-            <Skeleton
-              className={cn(
-                "h-4 w-52",
-                "md:w-48",
-                "xl:w-52",
-              )}
-            />
-            <Skeleton className={cn("h-4 w-24")} />
+          <div
+            className={cn(
+              "pt-20 text-left flex flex-col",
+              "xl:flex-row xl:justify-between xl:items-end",
+            )}
+          >
+            <Skeleton className={cn("h-3 w-64")} />
           </div>
           <div
             className={cn(
-              "space-y-5 pt-5 flex flex-col justify-end w-full items-end",
+              "space-y-2 pt-5 flex flex-col justify-end w-full items-end",
             )}
           >
-            <Skeleton className={cn("h-2 w-52")} />
-            <Skeleton className={cn("h-2 w-24")} />
+            <Skeleton className={cn("h-2 w-20")} />
+            <Skeleton className={cn("h-2 w-14")} />
             <Skeleton className={cn("h-2 w-10")} />
+            <Skeleton className={cn("h-2 w-10")} />
+            <Skeleton className={cn("h-2 w-24")} />
           </div>
-        </div>
-        <div className={cn("space-y-5 pt-5 w-full")}>
-          <Skeleton
-            className={cn(
-              "h-2 w-72",
-              "sm:w-80",
-              "md:w-[550px] md:mx-auto",
-              "xl:w-[850px]",
-            )}
-          />
-          <Skeleton
-            className={cn(
-              "h-2 w-52",
-              "sm:w-96",
-              "md:w-[600px] md:mx-auto",
-              "xl:w-[800px]",
-            )}
-          />
-          <Skeleton
-            className={cn(
-              "h-2 w-64",
-              "sm:w-72",
-              "md:w-[650px] md:mx-auto",
-              "xl:w-[820px]",
-            )}
-          />
-          <Skeleton
-            className={cn(
-              "h-2 w-56",
-              "sm:w-96",
-              "md:w-[550px] md:mx-auto",
-              "xl:w-[750px]",
-            )}
-          />
-          <Skeleton
-            className={cn(
-              "h-2 w-68",
-              "sm:w-80",
-              "md:w-[500px] md:mx-auto",
-              "xl:w-[600px]",
-            )}
-          />
-          <Skeleton
-            className={cn(
-              "h-2 w-48",
-              "sm:w-96",
-              "md:w-[600px] md:mx-auto",
-              "xl:w-[700px]",
-            )}
-          />
-          <Skeleton
-            className={cn(
-              "h-2 w-72",
-              "sm:w-80",
-              "md:w-[450px] md:mx-auto",
-              "xl:w-[650px]",
-            )}
-          />
         </div>
         <div
           className={cn(

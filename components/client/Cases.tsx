@@ -17,6 +17,7 @@ const Cases = ({
   nextProjectSlug,
 }: CasesProps) => {
   useLenis();
+
   return (
     <div
       className={cn(
@@ -45,29 +46,28 @@ const Cases = ({
       >
         <div
           className={cn(
-            "h-[90vh] flex flex-col",
-            "lg:h-[80vh] lg:justify-end",
+            "xl:flex xl:flex-col xl:h-[80vh] xl:justify-end",
           )}
         >
           <div
             className={cn(
-              "pt-8 h-full text-left flex flex-col justify-between",
-              "xl:h-auto xl:flex-row xl:justify-between xl:items-end",
+              "pt-8 text-left flex flex-col",
+              "xl:flex-row xl:justify-between xl:items-end",
             )}
           >
             <p
               className={cn(
-                "text-6xl pt-10",
-                "lg:pt-0",
-                "xl:text-[200px]",
+                "text-5xl pt-10",
+                "sm:text-6xl",
+                "xl:pt-0 xl:text-[200px]",
               )}
             >
               {cases?.title}
             </p>
             <div
               className={cn(
-                "text-sm",
-                "xl:text-base xl:text-right",
+                "text-sm text-right pt-14",
+                "xl:text-base xl:pt-0",
               )}
             >
               <p>{cases?.date}</p>
@@ -174,8 +174,7 @@ const Cases = ({
         </div>
         <div
           className={cn(
-            "w-full pt-14 text-left flex justify-center",
-            "xl:text-center",
+            "w-full pt-14 text-center flex justify-center",
           )}
         >
           <p
