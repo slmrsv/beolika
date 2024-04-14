@@ -9,6 +9,10 @@ import {
 } from "next/font/google";
 /* import { menuStore } from "@/stores"; */
 import CircleMouse from "./CircleMouse";
+import Lenis from "@studio-freight/lenis";
+import { ScrollTrigger } from "gsap/all";
+// eslint-disable-next-line import/no-named-as-default
+import gsap from "gsap";
 import useMouseFollower from "@/animations/useMouseFollower";
 
 const audioWide = Audiowide({
@@ -53,6 +57,20 @@ const LayoutClient = ({
   /* const isMenuOpen = menuStore((state) => state.isMenuOpen); */
 
   useMouseFollower();
+
+  if (typeof window !== 'undefined') {
+    const lenis = new Lenis();
+
+    lenis.on('scroll', () => {});
+  
+    lenis.on('scroll', ScrollTrigger.update);
+  
+    gsap.ticker.add((time)=>{
+      lenis.raf(time * 1000);
+    });
+  
+    gsap.ticker.lagSmoothing(0);
+  }
 
   /* useEffect(() => {
     if (isMenuOpen) {

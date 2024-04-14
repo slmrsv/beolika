@@ -14,7 +14,6 @@ import {
   isDragCursorStore,
   isWorkCursorStore,
 } from "@/stores";
-import Lenis from "@studio-freight/lenis";
 
 interface WorksProps {
   works: Work[] | null;
@@ -50,7 +49,6 @@ const Home = ({ works, articles }: WorksProps) => {
   }, [ref]);
   
   useGSAP(() => {
-    const lenis = new Lenis();
     const circle = document.querySelector(
       ".circle",
     ) as HTMLElement;
@@ -58,16 +56,6 @@ const Home = ({ works, articles }: WorksProps) => {
     const dragCursorMouse = selector(".drag");
     const linkCursorMouse = selector(".linkCursor");
     const workCursorMouse = selector(".works");
-
-
-    lenis.on('scroll', () => {});
-    
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    
-    requestAnimationFrame(raf);
 
     if (!circle) {
       return;
