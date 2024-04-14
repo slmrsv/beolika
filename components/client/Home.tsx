@@ -10,7 +10,7 @@ import Footer from "../Footer";
 import { useGSAP } from "@gsap/react";
 // eslint-disable-next-line import/no-named-as-default
 import gsap from "gsap";
-import { isDragCursorStore } from "@/stores";
+import { isDragCursorStore, isWorkCursorStore } from "@/stores";
 
 interface WorksProps {
   works: Work[] | null;
@@ -22,10 +22,13 @@ const Home = ({ works, articles }: WorksProps) => {
   const setIsDragCursor = isDragCursorStore(
     (state) => state.setIsDragCursor,
   );
+  const setIsWorkCursor = isWorkCursorStore(
+    (state) => state.setIsWorkCursor,
+  );
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   let selector: gsap.utils.SelectorFunc = gsap.utils.selector(ref);
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (ref.current) {
@@ -40,6 +43,7 @@ const Home = ({ works, articles }: WorksProps) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   
   useGSAP(() => {    
     const circle = document.querySelector(
@@ -48,8 +52,9 @@ const Home = ({ works, articles }: WorksProps) => {
     const titleCursorMouse = selector(".title");
     const dragCursorMouse = selector(".drag");
     const linkCursorMouse = selector(".linkCursor");
+    const workCursorMouse = selector(".works");
 
-    if (!circle) {
+    if (!circle ) {
       return;
     }
 
@@ -96,6 +101,23 @@ const Home = ({ works, articles }: WorksProps) => {
       };
     });
 
+    workCursorMouse.forEach((work) => {
+      work.onmousemove = () => {
+        gsap.to(circle, {
+          scale: 25,
+        });
+
+        setIsWorkCursor(true);
+      };
+      work.onmouseleave = () => {
+        gsap.to(circle, {
+          scale: 1,
+        });
+
+        setIsWorkCursor(false);
+      };
+    });
+
     return () => {
       window.onmousemove = null;
       if (titleCursorMouse) {
@@ -114,6 +136,12 @@ const Home = ({ works, articles }: WorksProps) => {
         linkCursorMouse.forEach((linkCursor) => {
           linkCursor.onmousemove = null;
           linkCursor.onmouseleave = null;
+        });
+      }
+      if (workCursorMouse) {
+        workCursorMouse.forEach((work) => {
+          work.onmousemove = null;
+          work.onmouseleave = null;
         });
       }
     };

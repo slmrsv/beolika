@@ -33,7 +33,9 @@ const Header = ({ width }: HeaderProps) => {
         <p className={cn("hidden", "xl:block")}>
           Available WorldWide
         </p>
+        {/* Available remotely only */}
         <p>Multidisciplinary Developer</p>
+        {/* Talented Developer */}
         <p className="flex gap-2">
           ©2024
           <span className={cn("hidden", "xl:block")}>
@@ -61,6 +63,7 @@ const Header = ({ width }: HeaderProps) => {
             engaging & memorable
           </span>{" "}
           digital solutions.
+          {/* products. */}
         </p>
       </div>
     </section>

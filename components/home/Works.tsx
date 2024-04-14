@@ -1,97 +1,13 @@
 import { cn } from "@/lib/utils";
 import { Work } from "@/types/types";
-import { useGSAP } from "@gsap/react";
-// eslint-disable-next-line import/no-named-as-default
-import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { GoArrowDownRight } from "react-icons/go";
-import { isWorkCursorStore } from "@/stores";
 
 interface WorksProps {
   works: Work[] | null;
 }
 const Works = ({ works }: WorksProps) => {
-  const setIsWorkCursor = isWorkCursorStore(
-    (state) => state.setIsWorkCursor,
-  );
-  useGSAP(() => {
-    const circle = document.querySelector(
-      ".circle",
-    ) as HTMLElement;
-    // eslint-disable-next-line no-undef
-    const worksMouse = document.querySelectorAll(
-      ".works",
-      // eslint-disable-next-line no-undef
-    ) as NodeListOf<HTMLElement>;
-
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        x: event.clientX + window.scrollX,
-        y: event.clientY + window.scrollY,
-        duration: 0.3,
-        ease: "expo.out",
-      });
-    };
-
-    const handleFrameMouseMove = () => {
-      gsap.to(circle, {
-        scale: 25,
-      });
-
-      setIsWorkCursor(true);
-    };
-
-    const handleFrameMouseLeave = () => {
-      if (!circle) {
-        return;
-      }
-
-      gsap.to(circle, {
-        scale: 1,
-      });
-
-      setIsWorkCursor(false);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    worksMouse.forEach((workMouse) => {
-      workMouse.addEventListener(
-        "mousemove",
-        handleFrameMouseMove,
-      );
-      workMouse.addEventListener(
-        "mouseleave",
-        handleFrameMouseLeave,
-      );
-      workMouse.addEventListener(
-        "click",
-        handleFrameMouseLeave,
-      );
-    });
-
-    return () => {
-      window.removeEventListener(
-        "mousemove",
-        handleMouseMove,
-      );
-      worksMouse.forEach((workMouse) => {
-        workMouse.removeEventListener(
-          "mousemove",
-          handleFrameMouseMove,
-        );
-        workMouse.removeEventListener(
-          "mouseleave",
-          handleFrameMouseLeave,
-        );
-      });
-    };
-  }, []);
 
   return (
     <section className={cn("py-4 border-t")}>
