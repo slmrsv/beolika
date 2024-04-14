@@ -120,8 +120,8 @@ const Footer = () => {
       </div>
       <p
         className={cn(
-          "font-montserrat w-full text-center font-ms font-normal text-base",
-          "md:text-lg",
+          "font-montserrat pt-14 w-full text-center font-ms font-normal text-xs",
+          "md:text-sm"
         )}
       >
         ©2024 - Beolika. All Rights Reserved.

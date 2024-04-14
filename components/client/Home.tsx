@@ -10,7 +10,11 @@ import Footer from "../Footer";
 import { useGSAP } from "@gsap/react";
 // eslint-disable-next-line import/no-named-as-default
 import gsap from "gsap";
-import { isDragCursorStore, isWorkCursorStore } from "@/stores";
+import {
+  isDragCursorStore,
+  isWorkCursorStore,
+} from "@/stores";
+import useLenis from "@/animations/useLenis";
 
 interface WorksProps {
   works: Work[] | null;
@@ -27,25 +31,26 @@ const Home = ({ works, articles }: WorksProps) => {
   );
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  let selector: gsap.utils.SelectorFunc = gsap.utils.selector(ref);
-
+  let selector: gsap.utils.SelectorFunc =
+    gsap.utils.selector(ref);
+  useLenis();
+    
   useEffect(() => {
     const handleResize = () => {
       if (ref.current) {
         setWidth(ref.current.clientWidth);
       }
     };
-    
+
     handleResize();
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [ref]);
 
-  
-  useGSAP(() => {    
+  useGSAP(() => {
     const circle = document.querySelector(
       ".circle",
     ) as HTMLElement;
@@ -54,7 +59,7 @@ const Home = ({ works, articles }: WorksProps) => {
     const linkCursorMouse = selector(".linkCursor");
     const workCursorMouse = selector(".works");
 
-    if (!circle ) {
+    if (!circle) {
       return;
     }
 

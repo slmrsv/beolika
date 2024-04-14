@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Work } from "@/types/types";
 import Image from "next/image";
-import Link from "next/link";
 import { GoArrowDownRight } from "react-icons/go";
 
 interface WorksProps {
@@ -41,9 +40,8 @@ const Works = ({ works }: WorksProps) => {
             </div>
             <p className={cn("xl:text-xl")}>{work.date}</p>
           </div>
-          <Link
+          <a
             href={`/cases/${work.slug}`}
-            scroll={false}
             className={cn(
               "works w-full py-20 block space-y-6",
               "xl:flex xl:items-center xl:gap-20 xl:py-44",
@@ -66,7 +64,7 @@ const Works = ({ works }: WorksProps) => {
             <p className={cn("text-2xl", "xl:text-8xl")}>
               {work.title}
             </p>
-          </Link>
+          </a>
         </div>
       ))}
     </section>
