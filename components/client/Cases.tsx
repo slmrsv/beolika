@@ -4,7 +4,8 @@ import { Case, Work } from "@/types/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import useLenis from "@/animations/useLenis";
+import { useGSAP } from '@gsap/react';
+import Lenis from '@studio-freight/lenis';
 
 interface CasesProps {
   cases: Case;
@@ -16,8 +17,20 @@ const Cases = ({
   previousProjectSlug,
   nextProjectSlug,
 }: CasesProps) => {
-  useLenis();
 
+  useGSAP(() => {
+    const lenis = new Lenis();
+
+    lenis.on('scroll', () => {});
+    
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+  });
+  
   return (
     <div
       className={cn(
