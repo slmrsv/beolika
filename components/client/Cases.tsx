@@ -57,7 +57,7 @@ const Cases = ({
               className={cn(
                 "text-5xl pt-10",
                 "sm:text-6xl",
-                "xl:pt-0 xl:text-[200px]",
+                "xl:pt-0 xl:text-[150px]",
               )}
             >
               {cases?.title}
@@ -112,7 +112,7 @@ const Cases = ({
               width={1200}
               height={750}
               className={cn(
-                "w-full bg-gray-300 rounded-3xl",
+                "w-full bg-gray-300 rounded-3xl object-cover",
               )}
             />
           ))}
