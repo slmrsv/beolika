@@ -57,7 +57,7 @@ const Works = ({ works }: WorksProps) => {
               width={1000}
               height={750}
               className={cn(
-                "rounded-3xl border border-foreground/20",
+                "rounded-3xl border border-foreground/20 object-cover",
                 "xl:max-w-[1000px]",
               )}
             ></Image>
