@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-// eslint-disable-next-line import/no-named-as-default
 
 interface HeaderProps {
   width: number;
@@ -23,7 +22,7 @@ const Header = ({ width }: HeaderProps) => {
       </h1>
       <div
         className={cn(
-          "flex justify-between w-full uppercase border-t pt-2 text-[10px]",
+          "flex justify-between  w-full uppercase border-t pt-2 text-[10px]",
           "xs:text-xs",
           "sm:text-xs",
           "lg:pt-4",
@@ -31,7 +30,7 @@ const Header = ({ width }: HeaderProps) => {
         )}
       >
         <p className={cn("hidden", "xl:block")}>
-          Available WorldWide
+            Available WorldWide
         </p>
         {/* Available remotely only */}
         <p>Multidisciplinary Developer</p>

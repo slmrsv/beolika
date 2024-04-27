@@ -26,7 +26,7 @@ const Works = ({ works }: WorksProps) => {
       </div>
       {works?.map((work, index) => (
         <div key={index} className="pt-20">
-          <div
+          {/* <div
             className={cn(
               "flex justify-between border-t pt-4",
               index % 2 === 0
@@ -39,11 +39,11 @@ const Works = ({ works }: WorksProps) => {
               {work.category}
             </div>
             <p className={cn("xl:text-xl")}>{work.date}</p>
-          </div>
+          </div> */}
           <a
             href={`/cases/${work.slug}`}
             className={cn(
-              "works w-full py-20 block space-y-6",
+              "works py-20 block space-y-6",
               "xl:flex xl:items-center xl:gap-20 xl:py-44",
               "2xl:gap-44",
               index % 2 === 0
@@ -58,10 +58,11 @@ const Works = ({ works }: WorksProps) => {
               height={750}
               className={cn(
                 "rounded-3xl border border-foreground/20 object-cover",
+                "lg:max-w-[500px]",
                 "xl:max-w-[1000px]",
               )}
             ></Image>
-            <p className={cn("text-2xl", "xl:text-8xl")}>
+            <p className={cn("text-3xl", "xl:text-8xl")}>
               {work.title}
             </p>
           </a>

@@ -41,3 +41,16 @@ export const isDragCursorStore = create<DragCursorStore>((set) => ({
   isDragCursor: false,
   setIsDragCursor: (value) => set(() => ({ isDragCursor: value })),
 }));
+
+/* interface InitialMousePosition {
+  initialMouseX: number | null,
+  initialMouseY: number | null,
+  // eslint-disable-next-line no-unused-vars
+  setInitialMousePosition: (x: number | null, y: number | null) => void,
+}
+
+export const useInitialMousePosition = create<InitialMousePosition>((set) => ({
+  initialMouseX: null,
+  initialMouseY: null,
+  setInitialMousePosition: (x, y) => set({ initialMouseX: x, initialMouseY: y }),
+})); */

@@ -1,6 +1,6 @@
-import { SkeletonProfil } from "@/components/skeleton/SkeletonProfil";
+import { SkeletonHome } from "@/components/skeleton/SkeletonHome";
 import React from "react";
 
 export default function Loading() {
-  return <SkeletonProfil />;
+  return <SkeletonHome />;
 }
