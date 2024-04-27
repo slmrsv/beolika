@@ -23,6 +23,7 @@
     "@react-three/fiber": "^8.16.1",
     "@studio-freight/lenis": "^1.0.37",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@vercel/speed-insights": "^1.0.10",
     "class-variance-authority": "^0.7.0",
     "cloudinary": "^2.0.1",
     "clsx": "^2.1.0",

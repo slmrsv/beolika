@@ -4,6 +4,7 @@ import { SiteConfig } from "@/lib/config";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { Providers } from "./Providers";
 import LayoutClient from "@/components/LayoutClient";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   metadataBase: SiteConfig.metadataBase,
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <LayoutClient>
       <Providers>
+        <SpeedInsights/>
         <div className="min-h-[94vh] flex flex-col">
           <div className="flex-1">{children}</div>
         </div>
