@@ -10,7 +10,7 @@ export const Providers = ({
     <>
       <ThemeProvider
         attribute="class"
-        defaultTheme="light" /* enableSystem */
+        defaultTheme="system" enableSystem
       >
         {children}
       </ThemeProvider>
