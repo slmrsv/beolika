@@ -34,7 +34,7 @@ const Footer = () => {
             )}
           >
             <span className="opacity-50">Do you</span> have
-            a project in mind?
+            a question ?
             <br />
             <span className="opacity-50">
               Send me a message on
@@ -126,7 +126,6 @@ const Footer = () => {
       >
         ©2024 - Beolika. All Rights Reserved.
       </p>
-      ;
     </section>
   );
 };
