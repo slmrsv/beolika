@@ -3,7 +3,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Work, Art, Article } from "@/types/types";
 import Header from "../home/Header";
-import About from "../home/About";
 import Works from "../home/Works";
 import News from "../home/News";
 import Footer from "../Footer";
@@ -45,7 +44,6 @@ const Home = ({ works, articles }: WorksProps) => {
       )}
     >
       <Header width={width} />
-      <About />
       <Works works={works} />
       <News articles={articles} />
       <Footer />

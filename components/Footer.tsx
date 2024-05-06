@@ -37,9 +37,9 @@ const Footer = () => {
             a question ?
             <br />
             <span className="opacity-50">
-              Send me a message on
+              Send me
             </span>{" "}
-            my e-link:
+            a message :
           </p>
         </div>
         <div>

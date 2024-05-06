@@ -8,7 +8,7 @@ const Header = ({ width }: HeaderProps) => {
     <section
       className={cn(
         "h-[85vh] flex flex-col justify-center items-center mb-2",
-        "xl:-mt-8 xl:h-[93vh]",
+        "xl:-mt-8 xl:h-[98vh]",
       )}
     >
       <h1
@@ -44,8 +44,9 @@ const Header = ({ width }: HeaderProps) => {
       </div>
       <div
         className={cn(
-          "text-3xl leading-10 w-full h-full flex items-end justify-end",
+          "text-3xl leading-10 w-full h-full flex items-center justify-end pt-44",
           "xs:leading-9",
+          "md:pt-0 md:items-end",
           "lg:text-4xl",
           "xl:text-5xl xl:leading-[60px]",
         )}
