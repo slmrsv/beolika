@@ -30,7 +30,7 @@ const About = () => {
         )}
       >
         <p className={cn("xl:indent-52")}>
-          A true Swiss Army knife, I'm a{" "}
+          Hi there, I'm a{" "}
           <span className="opacity-50">
             multidisciplinary developer
           </span>{" "}
@@ -38,7 +38,7 @@ const About = () => {
           <span className="opacity-50">
             French Riviera{" "}
           </span>
-          with 5 years' experience, focused on creating
+          focused on creating
           <span className="opacity-50">
             {" "}
             digital products

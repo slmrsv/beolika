@@ -7,6 +7,7 @@ import Works from "../home/Works";
 import News from "../home/News";
 import Footer from "../Footer";
 import useHomeAnimation from "@/animations/useHomeAnimation";
+import About from "../home/About";
 
 interface WorksProps {
   works: Work[] | null;
@@ -44,6 +45,7 @@ const Home = ({ works, articles }: WorksProps) => {
       )}
     >
       <Header width={width} />
+      <About />
       <Works works={works} />
       <News articles={articles} />
       <Footer />
