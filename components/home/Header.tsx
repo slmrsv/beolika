@@ -33,7 +33,7 @@ const Header = ({ width }: HeaderProps) => {
             Available WorldWide
         </p>
         {/* Available remotely only */}
-        <p>Multidisciplinary Developer</p>
+        <p>Creative Developer</p>
         {/* Talented Developer */}
         <p className="flex gap-2">
           ©2024
@@ -62,7 +62,7 @@ const Header = ({ width }: HeaderProps) => {
           <span className="opacity-50">
             engaging & memorable
           </span>{" "}
-          digital solutions.
+          digital products.
           {/* products. */}
         </p>
       </div>
