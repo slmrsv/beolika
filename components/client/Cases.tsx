@@ -49,7 +49,7 @@ const Cases = ({
         >
           <div
             className={cn(
-              "pt-8 text-left flex flex-col",
+              "pt-[400px] text-left flex flex-col",
               "xl:flex-row xl:justify-between xl:items-end",
             )}
           >
