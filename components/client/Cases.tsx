@@ -50,6 +50,8 @@ const Cases = ({
           <div
             className={cn(
               "pt-[400px] text-left flex flex-col",
+              "xs:pt-[350px]",
+              "sm:pt-[300px]",
               "xl:flex-row xl:justify-between xl:items-end",
             )}
           >
