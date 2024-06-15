@@ -33,7 +33,7 @@ const Header = ({ width }: HeaderProps) => {
             Available WorldWide
         </p>
         {/* Available remotely only */}
-        <p>Creative Developer</p>
+        <p>Creative Product Developer</p>
         {/* Talented Developer */}
         <p className="flex gap-2">
           ©2024

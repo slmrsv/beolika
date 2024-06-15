@@ -32,7 +32,7 @@ const About = () => {
         <p className={cn("xl:indent-52")}>
           Hi there 👋, I'm a{" "}
           <span className="opacity-50">
-          creative developer
+          creative product developer
           </span>{" "}
           from the{" "}
           <span className="opacity-50">
